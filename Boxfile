@@ -1,0 +1,4 @@
+web1:
+  type: static
+  httpd_document_root: server
+  httpd_index_list: stage.html
