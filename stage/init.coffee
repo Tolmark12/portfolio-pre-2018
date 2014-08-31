@@ -1,1 +1,1 @@
-console.log "Hello from ./stage/init.coffee "
+portfolio = new Portfolio($('body'))

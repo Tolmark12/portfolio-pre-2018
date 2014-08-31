@@ -1,0 +1,13 @@
+.top-nav                    { font-family:$lato; border-bottom: solid 6px #DEDEDD; position: relative;
+  .logo                     {}
+  .title-block              { font-size:64px; font-weight:$lato-black; color:#565757; text-transform: uppercase;;}
+  .nav                      { position: absolute; right:0; top:43px;
+    a                       { color:white; padding:10px; font-size:19px; letter-spacing: 1px; 
+      &:hover               { text-decoration: underline; }
+      &:after               { content:"/"; display:inline-block; color:#8D999E; font-weight: bold; margin-left:12px; margin-right: -10px; }
+      &:last-of-type        { padding-right: 0;
+        &:after             { display:none;}
+      }
+    }
+  }
+}

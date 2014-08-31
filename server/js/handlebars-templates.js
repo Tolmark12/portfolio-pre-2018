@@ -12,3 +12,12 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + ".</p>";
   return buffer;
   });
+this["hTemplates"] = this["hTemplates"] || {};
+this["hTemplates"]["top-nav"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"top-nav\"><div class=\"logo\"></div><div class=\"title-block\">Resistance Movement</div><div class=\"nav\"><a href=\"#\" data=\"work\">WORK</a><a href=\"#\" data=\"about\">ABOUT</a><a href=\"#\" data=\"contact\">CONTACT</a></div></div>";
+  });
