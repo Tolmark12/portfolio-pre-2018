@@ -14,11 +14,23 @@ a {
   font-family: 'Lato', sans-serif;
   border-bottom: solid 6px #DEDEDD;
   position: relative; }
+  .top-nav .logo {
+    display: inline-block;
+    padding: 20px 22px 0 0;
+    cursor: pointer; }
+    .top-nav .logo circle {
+      fill: #8D999E; }
+    .top-nav .logo polygon {
+      fill: #FFFFFF; }
+    .top-nav .logo:hover * {
+      fill: #FFFFFF; }
   .top-nav .title-block {
     font-size: 64px;
+    padding-top: 10px;
     font-weight: 900;
     color: #565757;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    display: inline-block; }
   .top-nav .nav {
     position: absolute;
     right: 0;
@@ -28,8 +40,6 @@ a {
       padding: 10px;
       font-size: 19px;
       letter-spacing: 1px; }
-      .top-nav .nav a:hover {
-        text-decoration: underline; }
       .top-nav .nav a:after {
         content: "/";
         display: inline-block;
