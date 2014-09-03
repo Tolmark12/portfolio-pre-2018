@@ -155,9 +155,9 @@ watchAndCompileFiles = (cb)->
 
 # ----------- BUILD (rel) ----------- #
 
-gulp.task 'rel:clean',       (cb) -> del( ['./rel/*'], cb); console.log "IMPORTANT! Make sure you run 'gulp' before 'gulp rel'"
+gulp.task 'rel:clean',       (cb) -> del( ['./rel/*'], cb); console.log "!! IMPORTANT !! If you haven't already, make sure you run 'gulp' before 'gulp rel'"
 gulp.task 'bumpVersion',     ()   -> bumpBowerVersion()
-gulp.task 'minify',          ()   -> minifyAndJoin();
+gulp.task 'minify',          ()   -> minifyAndJoin(); 
 gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'], -> pushViaGit()
 
 
