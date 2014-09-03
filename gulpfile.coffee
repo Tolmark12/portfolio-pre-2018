@@ -41,13 +41,11 @@ htmlStage = ->
     .pipe jade() 
     .pipe gulp.dest('./server/') 
 
-
-
 html = ->
   gulp.src( jadePath )
     .pipe jade(client: true)
     .pipe wrap("templates['<%= file.relative.split('.')[0] %>'] = <%= file.contents %>;\n")
-    .pipe concat('handlebars-templates.js') 
+    .pipe concat('jade-templates.js') 
     .pipe wrap("templates = {};\n<%= file.contents %>")
     .pipe gulp.dest('./server/js') 
 
