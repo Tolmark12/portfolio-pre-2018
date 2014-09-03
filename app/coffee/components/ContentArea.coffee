@@ -18,7 +18,7 @@ class ContentArea
   loadPage : (page) ->
     @currentPage = page
     @$el.empty()
-    node = hTemplates[ page ]()
+    node = templates[ page ]()
     $node = $(node)
     @$el.append( $node )
     @$el.animate {opacity:1}, duration:400

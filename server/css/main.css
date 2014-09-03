@@ -19,8 +19,9 @@ a {
   border-bottom: solid 6px #DEDEDD;
   position: relative; }
   .top-nav .logo {
+    vertical-align: top;
     display: inline-block;
-    padding: 20px 22px 0 0;
+    padding: 52px 22px 3px 0;
     cursor: pointer; }
     .top-nav .logo circle, .top-nav .logo polygon {
       -webkit-transition: fill 0.1s linear 0s;
@@ -45,7 +46,7 @@ a {
   .top-nav .nav {
     position: absolute;
     right: 0;
-    top: 43px; }
+    top: 54px; }
     .top-nav .nav a {
       -webkit-transition: color 0.1s linear 0s;
       -moz-transition: color 0.1s linear 0s;

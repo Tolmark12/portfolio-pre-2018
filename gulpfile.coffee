@@ -41,17 +41,17 @@ htmlStage = ->
     .pipe jade() 
     .pipe gulp.dest('./server/') 
 
-gulp.task 'html', -> htmlStage()
 
 
 html = ->
   gulp.src( jadePath )
-    .pipe jade()
-    .pipe handlebars()
-    .pipe wrap( 'Handlebars.template(<%= contents %>)' )
-    .pipe declare( namespace:'hTemplates')
+    .pipe jade(client: true)
+    .pipe wrap("templates['<%= file.relative.split('.')[0] %>'] = <%= file.contents %>;\n")
     .pipe concat('handlebars-templates.js') 
+    .pipe wrap("templates = {};\n<%= file.contents %>")
     .pipe gulp.dest('./server/js') 
+
+gulp.task 'html', -> html()
 
 css = ->
   # Stage css - not included in build

@@ -61,7 +61,7 @@ ContentArea = (function() {
     var $node, node;
     this.currentPage = page;
     this.$el.empty();
-    node = hTemplates[page]();
+    node = templates[page]();
     $node = $(node);
     this.$el.append($node);
     return this.$el.animate({
@@ -101,27 +101,14 @@ DataVo = (function() {
 
 })();
 
-Handlebars.registerHelper('video', function(vidName) {
-  return new Handlebars.SafeString("<video loop autoplay>\n  <source src=\"assets/" + vidName + ".webm\" type='video/webm; codecs=\"vp8.0, vorbis\"' />\n  <source src=\"assets/" + vidName + ".mp4\" type='video/mp4;codecs=\"avc1.42E01E, mp4a.40.2\"' />\n</video>");
-});
 
-Handlebars.registerHelper('portfolioIndexProjects', function() {
-  var project, str, _i, _len, _ref;
-  str = "";
-  _ref = DataVo.portfolio;
-  for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-    project = _ref[_i];
-    str += "<div class='project " + project.id + "' onclick=\" PubSub.publish( 'CHANGE_CONTENT', { pageId:'" + project.id + "' }) \" />";
-  }
-  return new Handlebars.SafeString(str);
-});
 
 var TopNav;
 
 TopNav = (function() {
   function TopNav($el) {
     var node;
-    node = hTemplates['top-nav']();
+    node = templates['top-nav']();
     this.$node = $(node);
     $el.prepend(this.$node);
     PubSub.subscribe('CHANGE_CONTENT', (function(_this) {

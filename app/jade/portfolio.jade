@@ -1,2 +1,3 @@
 .portfolio-index
-  {{portfolioIndexProjects}}
+  each project, index in DataVo.portfolio
+    .project(class=project.id, onclick="PubSub.publish( 'CHANGE_CONTENT', { pageId:'" + project.id + "'} )") 

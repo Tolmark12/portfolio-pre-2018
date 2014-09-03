@@ -1,7 +1,7 @@
 class TopNav
 
   constructor: ( $el ) ->
-    node = hTemplates['top-nav']()
+    node = templates['top-nav']()
     @$node = $(node)
     $el.prepend( @$node )
 
