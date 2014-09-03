@@ -5,7 +5,7 @@ $meta: "ff-meta-web-pro",sans-serif;
 $lato-bold :700;
 $lato-black:900;
 
-@mixin transition ($property:all, $duration:0.05s, $timing:linear, $delay:0s) {
+@mixin transition ($property:all, $duration:0.1s, $timing:linear, $delay:0s) {
   @if $property != none {
     -webkit-transition: $property $duration $timing $delay;
     -moz-transition: $property $duration $timing $delay;

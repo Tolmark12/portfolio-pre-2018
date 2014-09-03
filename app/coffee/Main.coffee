@@ -5,6 +5,7 @@ class Portfolio
 
   build : () ->
     @nav = new TopNav(@$el)
+    @nav = new ContentArea $(".content", @$el)
   
   
 Portfolio = Portfolio

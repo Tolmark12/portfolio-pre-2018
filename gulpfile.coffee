@@ -32,8 +32,8 @@ jadePath          = './app/jade/**/*.jade'
 cssPath           = './app/scss/*.scss'
 cssStagePath      = './stage/stage.scss'
 coffeePath        = './app/coffee/**/*.coffee'
-coffeeStagePath   = "./stage/**/*.coffee"
-imagePath         = "./app/images/*"
+coffeeStagePath   = './stage/**/*.coffee'
+assetPath         = ['./app/images/*', './app/video/*']
 
 
 htmlStage = ->
@@ -80,10 +80,13 @@ jsStage = ->
     .pipe concat('init.js') 
     .pipe gulp.dest('server/stage/js') 
 
-copyImages = () ->
-  gulp.src imagePath
-    .pipe gulp.dest('server/images') 
+copyAssets = (cb) ->
+  # ['./app/images/*', './app/videos/*']
+  gulp.src assetPath
+    .pipe gulp.dest('server/assets') 
     .on('end', cb)
+
+gulp.task 'assets', -> copyAssets(()=>)
 
 copyBowerLibs = ->
   bower().pipe gulp.dest('./server/bower-libs/')
@@ -116,6 +119,7 @@ minifyAndJoin = () ->
     .pipe(gulp.dest('rel/'));
 
 gulp.task 'min', -> minifyAndJoin()
+gulp.task 'min', -> minifyAndJoin()
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -142,13 +146,13 @@ launch = ->
 
 # Livereload Server
 watchAndCompileFiles = (cb)->
-  watch { glob:coffeePath      },  -> js().pipe         livereload() 
-  watch { glob:cssPath         },  -> css().pipe        livereload()
-  watch { glob:jadePath        },  -> html().pipe       livereload() 
-  watch { glob:coffeeStagePath },  -> jsStage().pipe    livereload() 
-  watch { glob:cssStagePath    },  -> cssStage().pipe   livereload()
-  watch { glob:jadeStagePath   },  -> htmlStage().pipe  livereload() 
-  watch { glob:imagePath       },  -> copyImages().pipe livereload() 
+  watch { glob:coffeePath      },  -> js().pipe           livereload() 
+  watch { glob:cssPath         },  -> css().pipe          livereload()
+  watch { glob:jadePath        },  -> html().pipe         livereload() 
+  watch { glob:coffeeStagePath },  -> jsStage().pipe      livereload() 
+  watch { glob:cssStagePath    },  -> cssStage().pipe     livereload()
+  watch { glob:jadeStagePath   },  -> htmlStage().pipe    livereload() 
+  watch { glob:assetPath       },  -> copyAssets(cb).pipe livereload() 
 
 
 # ----------- BUILD (rel) ----------- #
@@ -163,6 +167,6 @@ gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'], -> pushViaGit()
 
 gulp.task 'clean',                 (cb) -> del ['./server/*',], cb
 gulp.task 'bowerLibs', ['clean'],  (cb) -> copyBowerLibs();
-gulp.task 'server', ['bowerLibs'], ()   -> watchAndCompileFiles(); server(); launch()
+gulp.task 'server', ['bowerLibs'], (cb) -> watchAndCompileFiles(cb); server(); launch()
 gulp.task 'default', ['server']
 

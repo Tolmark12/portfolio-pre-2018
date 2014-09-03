@@ -1,3 +1,3 @@
 var portfolio;
 
-portfolio = new Portfolio($('body'));
+portfolio = new Portfolio($('.wrapper'));

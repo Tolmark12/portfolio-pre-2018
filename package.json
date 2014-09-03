@@ -28,7 +28,8 @@
     "gulp-util": "~2.2.20",
     "gulp-watch": "^0.6.9",
     "js-beautify": "~1.5.1",
-    "tiny-lr": "0.0.7"
+    "tiny-lr": "0.0.7",
+    "merge-stream": "~0.1.5"
   },
   "devDependencies": {
     "del": "~0.1.1",
