@@ -78,13 +78,9 @@ jsStage = ->
     .pipe concat('init.js') 
     .pipe gulp.dest('server/stage/js') 
 
-copyAssets = (cb) ->
-  # ['./app/images/*', './app/videos/*']
+copyAssets = (destination) ->
   gulp.src assetPath
-    .pipe gulp.dest('server/assets') 
-    .on('end', cb)
-
-gulp.task 'assets', -> copyAssets(()=>)
+    .pipe gulp.dest(destination) 
 
 copyBowerLibs = ->
   bower().pipe gulp.dest('./server/bower-libs/')
@@ -144,20 +140,21 @@ launch = ->
 
 # Livereload Server
 watchAndCompileFiles = (cb)->
-  watch { glob:coffeePath      },  -> js().pipe           livereload() 
-  watch { glob:cssPath         },  -> css().pipe          livereload()
-  watch { glob:jadePath        },  -> html().pipe         livereload() 
-  watch { glob:coffeeStagePath },  -> jsStage().pipe      livereload() 
-  watch { glob:cssStagePath    },  -> cssStage().pipe     livereload()
-  watch { glob:jadeStagePath   },  -> htmlStage().pipe    livereload() 
-  watch { glob:assetPath       },  -> copyAssets(cb).pipe livereload() 
+  watch { glob:coffeePath      },  -> js().pipe                            livereload() 
+  watch { glob:cssPath         },  -> css().pipe                           livereload()
+  watch { glob:jadePath        },  -> html().pipe                          livereload() 
+  watch { glob:coffeeStagePath },  -> jsStage().pipe                       livereload() 
+  watch { glob:cssStagePath    },  -> cssStage().pipe                      livereload()
+  watch { glob:jadeStagePath   },  -> htmlStage().pipe                     livereload() 
+  watch { glob:assetPath       },  -> copyAssets('server/assets').pipe     livereload() 
 
 
 # ----------- BUILD (rel) ----------- #
 
-gulp.task 'rel:clean',       (cb) -> del( ['./rel/*'], cb); console.log "!! IMPORTANT !! If you haven't already, make sure you run 'gulp' before 'gulp rel'"
-gulp.task 'bumpVersion',     ()   -> bumpBowerVersion()
-gulp.task 'minify',          ()   -> minifyAndJoin(); 
+gulp.task 'rel:clean',              (cb) -> del( ['./rel/*'], cb); console.log "!! IMPORTANT !! If you haven't already, make sure you run 'gulp' before 'gulp rel'"
+gulp.task 'bumpVersion',            ()   -> bumpBowerVersion()
+gulp.task 'copyAssets',             () -> copyAssets('rel/assets')
+gulp.task 'minify',['copyAssets'],  () -> minifyAndJoin(); 
 gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'], -> pushViaGit()
 
 
