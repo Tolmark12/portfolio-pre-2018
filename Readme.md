@@ -3,3 +3,6 @@
   ffmpeg -i input.mov output.mp4  # : https://trac.ffmpeg.org/wiki/Encode/H.264
   ffmpeg -i input.mov output.webm # : https://trac.ffmpeg.org/wiki/Encode/VP8
 ```
+
+# Allowing forward / back button, etc
+https://github.com/browserstate/history.js/

@@ -8,7 +8,8 @@ Portfolio = (function() {
 
   Portfolio.prototype.build = function() {
     this.nav = new TopNav(this.$el);
-    return this.nav = new ContentArea($(".content", this.$el));
+    this.content = new ContentArea($(".content", this.$el));
+    return this.window = new Window();
   };
 
   return Portfolio;
@@ -153,5 +154,22 @@ TopNav = (function() {
   };
 
   return TopNav;
+
+})();
+
+var Window;
+
+Window = (function() {
+  function Window() {
+    History.Adapter.bind(window, 'statechange', (function(_this) {
+      return function() {
+        var state;
+        state = History.getState();
+        return console.log(state);
+      };
+    })(this));
+  }
+
+  return Window;
 
 })();
