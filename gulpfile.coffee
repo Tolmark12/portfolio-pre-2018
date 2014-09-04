@@ -95,7 +95,7 @@ pushViaGit = ->
     regex   = /version"\s*:\s*"(.+)"/
     version = data.match(regex)[1]
     gulp.src('./')
-      .pipe git.add()
+      .pipe git.add( args:"--all" )
       .pipe git.commit("BUILD - #{version}")
       .pipe git.push 'origin', 'master', (err)=> console.log( err)
 
