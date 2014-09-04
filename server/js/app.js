@@ -26,7 +26,6 @@ ContentArea = (function() {
     this.$el.css({
       opacity: 0
     });
-    this.loadPage('portfolio');
     PubSub.subscribe('CHANGE_CONTENT', (function(_this) {
       return function(msg, data) {
         return _this.changePage(data.pageId);
@@ -82,6 +81,10 @@ DataVo = (function() {
   function DataVo() {}
 
   DataVo.pages = {
+    "/": {
+      id: "portfolio",
+      title: ""
+    },
     portfolio: {
       id: "portfolio",
       title: ""
@@ -114,7 +117,7 @@ TopNav = (function() {
     $el.prepend(this.$node);
     PubSub.subscribe('CHANGE_CONTENT', (function(_this) {
       return function(msg, data) {
-        return _this.changePageTitle(DataVo.pages[data.pageId].title);
+        return _this.changePageTitleTxt(DataVo.pages[data.pageId].title);
       };
     })(this));
     PubSub.subscribe('NAV_CLICK', this.onNavItemClick);
@@ -130,12 +133,12 @@ TopNav = (function() {
   }
 
   TopNav.prototype.onNavItemClick = function(m, data) {
-    return PubSub.publish('CHANGE_CONTENT', {
+    return PubSub.publish('CHANGE_PAGE', {
       pageId: data.id
     });
   };
 
-  TopNav.prototype.changePageTitle = function(title) {
+  TopNav.prototype.changePageTitleTxt = function(title) {
     return $('.title-block', this.$node).animate({
       opacity: 0
     }, {
@@ -157,18 +160,45 @@ TopNav = (function() {
 
 })();
 
-var Window;
+var Window,
+  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
 Window = (function() {
   function Window() {
-    History.Adapter.bind(window, 'statechange', (function(_this) {
-      return function() {
-        var state;
-        state = History.getState();
-        return console.log(state);
+    this.onWindowStateChange = __bind(this.onWindowStateChange, this);
+    PubSub.subscribe('CHANGE_PAGE', (function(_this) {
+      return function(msg, data) {
+        return _this.changePage(data);
       };
     })(this));
+    History.Adapter.bind(window, 'statechange', this.onWindowStateChange);
+    this.loadInitialPage();
   }
+
+  Window.prototype.changePage = function(data) {
+    var obj;
+    obj = DataVo.pages[data.pageId];
+    return History.pushState({
+      page: obj.id
+    }, obj.title, "?page=" + obj.id);
+  };
+
+  Window.prototype.onWindowStateChange = function() {
+    var state;
+    state = History.getState();
+    return PubSub.publish('CHANGE_CONTENT', {
+      pageId: state.data.page
+    });
+  };
+
+  Window.prototype.loadInitialPage = function() {
+    var obj, pageId, _ref;
+    pageId = (_ref = document.URL.split("?")[1]) != null ? _ref.split("=")[1] : void 0;
+    obj = pageId == null ? DataVo.pages['portfolio'] : DataVo.pages[pageId];
+    return History.replaceState({
+      page: obj.id
+    }, obj.title, "?page=" + obj.id);
+  };
 
   return Window;
 

@@ -1,9 +1,24 @@
 class Window
 
   constructor: () ->
-    History.Adapter.bind window,'statechange', ()=> 
-      state = History.getState()
-      console.log state
+    # Subscribe to change page click events from
+    PubSub.subscribe 'CHANGE_PAGE', (msg, data)=> @changePage data
+    History.Adapter.bind window,'statechange', @onWindowStateChange
+    @loadInitialPage()
+
+
+  # Push a new state to the window
+  changePage : (data) ->
+    obj = DataVo.pages[data.pageId]
+    History.pushState {page:obj.id}, obj.title, "?page=#{obj.id}"
     
-    # Push a new state to the window
-    # History.pushState({state:2}, "State 2", "?state=2");
+          
+  onWindowStateChange : () =>
+    state = History.getState()
+    PubSub.publish( 'CHANGE_CONTENT', { pageId:state.data.page })
+
+  loadInitialPage : () ->
+    pageId = document.URL.split("?")[1]?.split("=")[1]
+    obj = if !pageId? then DataVo.pages['portfolio'] else DataVo.pages[pageId]
+    History.replaceState {page:obj.id}, obj.title, "?page=#{obj.id}"
+  

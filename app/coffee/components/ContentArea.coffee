@@ -2,7 +2,6 @@ class ContentArea
 
   constructor: (@$el) ->
     @$el.css opacity:0
-    @loadPage('portfolio')
     PubSub.subscribe 'CHANGE_CONTENT', (msg, data)=> @changePage data.pageId
   
   changePage : (page) ->

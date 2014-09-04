@@ -21,7 +21,7 @@ buf.push("<div class=\"portfolio-index\">");
     for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
       var project = $$obj[index];
 
-buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_CONTENT', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
     }
 
   } else {
@@ -29,7 +29,7 @@ buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_CONTENT', { pag
     for (var index in $$obj) {
       $$l++;      var project = $$obj[index];
 
-buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_CONTENT', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
     }
 
   }

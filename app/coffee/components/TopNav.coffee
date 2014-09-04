@@ -5,7 +5,7 @@ class TopNav
     @$node = $(node)
     $el.prepend( @$node )
 
-    PubSub.subscribe 'CHANGE_CONTENT', (msg, data)=> @changePageTitle DataVo.pages[data.pageId].title
+    PubSub.subscribe 'CHANGE_CONTENT', (msg, data)=> @changePageTitleTxt DataVo.pages[data.pageId].title
     PubSub.subscribe 'NAV_CLICK', @onNavItemClick
     
     # Pub/Sub for nav item clicks
@@ -15,9 +15,9 @@ class TopNav
 
   # On Nav Item Click
   onNavItemClick : (m, data) ->
-    PubSub.publish( 'CHANGE_CONTENT', { pageId:data.id })
+    PubSub.publish( 'CHANGE_PAGE', { pageId:data.id })
 
-  changePageTitle : (title) ->
+  changePageTitleTxt : (title) ->
     $('.title-block', @$node).animate {opacity:0}, duration:200, complete:()=>
       $('.title-block', @$node).text title
       $('.title-block', @$node).animate {opacity:1}, {duration:200}
