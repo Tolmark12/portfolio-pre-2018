@@ -166,6 +166,7 @@ var Window,
 Window = (function() {
   function Window() {
     this.onWindowStateChange = __bind(this.onWindowStateChange, this);
+    this.defaultPage = 'resistance';
     PubSub.subscribe('CHANGE_PAGE', (function(_this) {
       return function(msg, data) {
         return _this.changePage(data);
@@ -194,10 +195,13 @@ Window = (function() {
   Window.prototype.loadInitialPage = function() {
     var obj, pageId, _ref;
     pageId = (_ref = document.URL.split("?")[1]) != null ? _ref.split("=")[1] : void 0;
-    obj = pageId == null ? DataVo.pages['portfolio'] : DataVo.pages[pageId];
-    return History.replaceState({
+    obj = pageId == null ? DataVo.pages[this.defaultPage] : DataVo.pages[pageId];
+    History.replaceState({
       page: obj.id
     }, obj.title, "?page=" + obj.id);
+    if (true) {
+      return this.onWindowStateChange();
+    }
   };
 
   return Window;

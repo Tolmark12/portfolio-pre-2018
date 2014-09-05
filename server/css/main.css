@@ -14,6 +14,13 @@ a {
   margin: 0 auto;
   width: 1215px; }
 
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  display: block; }
+
 .top-nav {
   font-family: 'Lato', sans-serif;
   border-bottom: solid 6px #DEDEDD;
@@ -97,3 +104,36 @@ a {
     background-position: 0px -0px; }
   .portfolio-index .project.resistance:after {
     background-position: -211px -0px; }
+
+.meta-data {
+  padding: 40px 0 0 0; }
+  .meta-data .overview, .meta-data .my-role, .meta-data .collaborators, .meta-data .client {
+    font-family: "ff-meta-web-pro", sans-serif;
+    font-style: italic;
+    color: #939394;
+    font-size: 14px;
+    margin-right: 33px; }
+    .meta-data .overview:before, .meta-data .my-role:before, .meta-data .collaborators:before, .meta-data .client:before {
+      content: "";
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      display: block;
+      border-bottom: solid 2px #DEDEDD;
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: #565757; }
+  .meta-data .overview:before {
+    content: "overview"; }
+  .meta-data .my-role:before {
+    content: "contributions"; }
+  .meta-data .collaborators:before {
+    content: "collaborators"; }
+  .meta-data .client:before {
+    content: "client"; }
+  .meta-data .overview {
+    font-size: 16px; }
+  .meta-data .client {
+    margin-right: 0; }

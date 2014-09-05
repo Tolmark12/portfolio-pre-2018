@@ -161,7 +161,7 @@ gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'], -> pushViaGit()
   # ----------- MAIN ----------- #
 
 gulp.task 'clean',                 (cb) -> del ['./server/*',], cb
-gulp.task 'bowerLibs', ['clean'],  (cb) -> copyBowerLibs();
+gulp.task 'bowerLibs', ['clean'],  () -> copyBowerLibs();
 gulp.task 'server', ['bowerLibs'], ()   -> watchAndCompileFiles(); server(); launch()
 gulp.task 'default', ['server']
 

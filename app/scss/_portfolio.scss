@@ -1,0 +1,12 @@
+.meta-data                { padding:40px 0 0 0;
+  .overview, .my-role, 
+  .collaborators, .client { font-family: $meta; font-style: italic; color:#939394; font-size:14px; margin-right:33px;
+    &:before              { content:""; padding-bottom:10px; margin-bottom:10px; display: block;  border-bottom:solid 2px #DEDEDD; font-family:$lato; font-style: normal; font-weight:$lato-bold; text-transform: uppercase; font-size: 13px; color:#565757; }
+  }
+  .overview:before        { content:"overview" } 
+  .my-role:before         { content:"contributions" } 
+  .collaborators:before   { content:"collaborators" } 
+  .client:before          { content:"client" }
+  .overview               { font-size:16px; }
+  .client                 {margin-right:0;}
+}
