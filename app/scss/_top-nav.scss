@@ -1,4 +1,4 @@
-.top-nav                    { font-family:$lato; border-bottom: solid 6px #DEDEDD; position: relative;
+.top-nav                    { font-family:$lato; border-bottom: solid 6px $light-gray; position: relative;
   .logo                     { vertical-align:top; display: inline-block; padding: 52px 22px 3px 0; cursor:pointer;
     circle, polygon         { @include transition(fill, 0.1s); }
     circle                  { fill:#8D999E; }

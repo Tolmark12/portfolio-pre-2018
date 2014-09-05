@@ -1,11 +1,34 @@
 templates = {};
+templates['about'] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<p>About</p>");;return buf.join("");
+};
+
+templates['contact'] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<p>Contact</p>");;return buf.join("");
+};
+
 templates['ibex'] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<p>IBEX</p>");
-jade_mixins["video"]('a');;return buf.join("");
+buf.push("<div class=\"meta-data pure-g\"><div class=\"overview pure-u-5-12\">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</div><div class=\"my-role pure-u-1-8\"><ul><li>Design</li><li>Illustration</li><li>Photography</li></ul></div><div class=\"collaborators pure-u-1-8\"><ul><li>Neha Tembey - Design</li><li>Jason Campbell - Design</li></ul></div><div class=\"client pure-u-1-4\">Resistance Movement Movie</div></div>");;return buf.join("");
+};
+
+templates['overlay-nav'] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<div class=\"overlay-nav\"><div class=\"right\"></div><div class=\"left\"></div></div>");;return buf.join("");
 };
 
 templates['portfolio'] = function template(locals) {
@@ -44,7 +67,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<div class=\"meta-data pure-g\"><div class=\"overview pure-u-5-12\">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</div><div class=\"my-role pure-u-1-8\"><ul><li>Design</li><li>Illustration</li><li>Photography</li></ul></div><div class=\"collaborators pure-u-1-8\"><ul><li>Neha Tembey - Design</li><li>Jason Campbell - Design</li></ul></div><div class=\"client pure-u-1-4\">Resistance Movement Movie</div></div>");;return buf.join("");
+buf.push("<div class=\"resistance\"><div class=\"meta-data pure-g\"><div class=\"overview pure-u-5-12\">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</div><div class=\"my-role pure-u-1-4\"><ul><li>Design</li><li>Illustration</li></ul></div><div class=\"client pure-u-1-4\">Resistance Movement Movie</div></div><div class=\"descript\">Initial Theatrical Production Announcement Poster - <span>Production began as a play and was later adapted to film. Play centered around BBC Radio Broadcasts.</span></div><div class=\"play-poster\"> <img src=\"/assets/resist-play-poster.jpg\"/></div><div class=\"descript\">In Movie Poster Props - <span>Printed and used on  set ito evoke WWII German propaganda posters</span></div><div class=\"pure-g resist\"><div class=\"pure-u-1-3 lies\"></div><div class=\"pure-u-1-3 enemy\"></div><div class=\"pure-u-1-3 leaflet\"></div></div></div>");;return buf.join("");
 };
 
 templates['top-nav'] = function template(locals) {

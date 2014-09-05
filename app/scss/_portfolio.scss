@@ -8,5 +8,9 @@
   .collaborators:before   { content:"collaborators" } 
   .client:before          { content:"client" }
   .overview               { font-size:16px; }
-  .client                 {margin-right:0;}
+  .client                 { margin-right:0; }
+} 
+
+.descript                 { margin:50px 0 20px 0; font-style:italic; width:100%; padding:0 0 5px 0;  border-bottom:solid 2px $light-gray;  
+  span                    { color:#565757; }
 }

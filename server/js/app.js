@@ -9,7 +9,8 @@ Portfolio = (function() {
   Portfolio.prototype.build = function() {
     this.nav = new TopNav(this.$el);
     this.content = new ContentArea($(".content", this.$el));
-    return this.window = new Window();
+    this.window = new Window();
+    return this.overlayNav = new OverlayNav(this.$el);
   };
 
   return Portfolio;
@@ -85,6 +86,14 @@ DataVo = (function() {
       id: "portfolio",
       title: ""
     },
+    about: {
+      id: "about",
+      title: ""
+    },
+    contact: {
+      id: "contact",
+      title: ""
+    },
     portfolio: {
       id: "portfolio",
       title: ""
@@ -106,6 +115,19 @@ DataVo = (function() {
 })();
 
 
+
+var OverlayNav;
+
+OverlayNav = (function() {
+  function OverlayNav() {
+    var node;
+    node = templates['overlay-nav']();
+    this.$node = $(node);
+  }
+
+  return OverlayNav;
+
+})();
 
 var TopNav;
 

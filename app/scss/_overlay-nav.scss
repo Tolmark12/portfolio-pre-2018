@@ -1,0 +1,6 @@
+$buttonHeight:100px;
+.overlay-nav      { position: fixed; top: 50%; width:100%; 
+ .right, .left    { width:$buttonHeight; height: $buttonHeight; margin-top:$buttonHeight/-2; border-radius: 50%; background: white; cursor:pointer; }
+ .left            { float:left;}
+ .right           { float:right;}
+}

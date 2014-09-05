@@ -27,13 +27,13 @@ wrap         = require 'gulp-wrap'
 
 # Paths to source files
 
-jadeStagePath     = './stage/stage.jade'
-jadePath          = './app/jade/**/*.jade'
-cssPath           = './app/scss/*.scss'
-cssStagePath      = './stage/stage.scss'
-coffeePath        = './app/coffee/**/*.coffee'
-coffeeStagePath   = './stage/**/*.coffee'
-assetPath         = ['./app/images/*', './app/video/*']
+jadeStagePath     = 'stage/stage.jade'
+jadePath          = 'app/jade/**/*.jade'
+cssPath           = 'app/scss/**/*.scss'
+cssStagePath      = 'stage/stage.scss'
+coffeePath        = 'app/coffee/**/*.coffee'
+coffeeStagePath   = 'stage/**/*.coffee'
+assetPath         = ['app/images/*', 'app/video/*']
 
 
 htmlStage = ->
