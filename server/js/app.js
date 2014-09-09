@@ -239,6 +239,9 @@ OverlayNav = (function() {
   OverlayNav.prototype.show = function() {
     if (this.isHidden) {
       this.$node.stop(true);
+      this.$node.css({
+        display: "block"
+      });
       this.$node.animate({
         opacity: 1
       }, {
@@ -254,7 +257,14 @@ OverlayNav = (function() {
       this.$node.animate({
         opacity: 0
       }, {
-        duration: 300
+        duration: 300,
+        complete: (function(_this) {
+          return function() {
+            return _this.$node.css({
+              display: "none"
+            });
+          };
+        })(this)
       });
       return this.isHidden = true;
     }
@@ -301,7 +311,7 @@ TopNav = (function() {
     $el.prepend(this.$node);
     PubSub.subscribe('CHANGE_CONTENT', (function(_this) {
       return function(msg, data) {
-        return _this.changePageTitleTxt(DataVo.pages[data.pageId].title);
+        return _this.changePageTitleTxt(DataVo.pages[data.pageId].title, DataVo.pages[data.pageId].subtitle);
       };
     })(this));
     PubSub.subscribe('NAV_CLICK', this.onNavItemClick);
@@ -322,19 +332,30 @@ TopNav = (function() {
     });
   };
 
-  TopNav.prototype.changePageTitleTxt = function(title) {
+  TopNav.prototype.changePageTitleTxt = function(title, subtitle) {
     return $('.title-block', this.$node).animate({
       opacity: 0
     }, {
       duration: 200,
       complete: (function(_this) {
         return function() {
-          $('.title-block', _this.$node).text(title);
-          return $('.title-block', _this.$node).animate({
+          $('.title', _this.$node).text(title);
+          $('.title-block', _this.$node).animate({
             opacity: 1
           }, {
             duration: 200
           });
+          if (subtitle != null) {
+            $('.subtitle', _this.$node).text(subtitle);
+            return $('.subtitle', _this.$node).css({
+              display: "inline-block"
+            });
+          } else {
+            $('.subtitle', _this.$node).text("");
+            return $('.subtitle', _this.$node).css({
+              display: "none"
+            });
+          }
         };
       })(this)
     });

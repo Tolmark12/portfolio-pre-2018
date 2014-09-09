@@ -29,3 +29,11 @@ $lato-black:900;
   -moz-box-shadow: $xoffset $yoffset $blur $radius $color;
   box-shadow: $xoffset $yoffset $blur $radius $color;
 }
+
+@mixin rotate ($deg:45deg) {
+  -ms-transform: rotate($deg); 
+  -moz-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  transform:rotate($deg);
+}

@@ -28,13 +28,14 @@ class OverlayNav
   show : () -> 
     if @isHidden
       @$node.stop true
+      @$node.css display:"block"
       @$node.animate {opacity:1}, {duration:500}
       @isHidden = false
   
   hide : () -> 
     if !@isHidden
       @$node.stop true
-      @$node.animate {opacity:0}, {duration:300}
+      @$node.animate {opacity:0}, {duration:300, complete:()=> @$node.css({display:"none"}) }
       @isHidden = true
   
   onChangePage : (pageId) ->

@@ -5,7 +5,12 @@
     polygon                 { fill:#FFFFFF; }
     &:hover *               { fill:#565757; }
   }
-  .title-block              { height:75px; overflow:hidden; font-size:64px; padding-top: 10px; font-weight:$lato-black; color:#565757; text-transform: uppercase; display:inline-block;}
+  .title-block              { height:75px; padding-top: 10px; display: inline-block;
+    .title                  { overflow:hidden; font-size:64px;  font-weight:$lato-black; color:#565757; text-transform: uppercase; display:inline-block;}
+    .subtitle               { display: inline-block; color:#959696; font-size:37px; font-weight: $lato-black; text-transform: uppercase; overflow:hidden; margin-bottom: 6px; 
+      &:before              { content:""; display:inline-block; height:40px; border-left:2px solid $light-gray; overflow: hidden; margin-left:17px; padding-left:17px; padding-top:10px; overflow: hidden;}
+    }
+  }
   .nav                      { position: absolute; right:0; top:54px;
     a                       { @include transition(color); color:white; padding:10px; font-size:19px; letter-spacing: 1px; cursor: pointer;
       &:hover               { color:#565757; }
