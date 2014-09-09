@@ -193,6 +193,7 @@ var OverlayNav,
 
 OverlayNav = (function() {
   function OverlayNav() {
+    this.onKeyPress = __bind(this.onKeyPress, this);
     this.onScroll = __bind(this.onScroll, this);
     var node;
     node = templates['overlay-nav']();
@@ -213,11 +214,22 @@ OverlayNav = (function() {
         return PubSub.publish('PREV_PROJECT');
       };
     })(this));
+    $('.left, .right', this.$node).on("mouseover", (function(_this) {
+      return function() {
+        return _this.showCenter();
+      };
+    })(this));
+    $('.left, .right', this.$node).on("mouseout", (function(_this) {
+      return function() {
+        return _this.hideCenter();
+      };
+    })(this));
     PubSub.subscribe('CHANGE_CONTENT', (function(_this) {
       return function(msg, data) {
         return _this.onChangePage(data.pageId);
       };
     })(this));
+    this.hideCenter(0);
   }
 
   OverlayNav.prototype.onScroll = function() {
@@ -270,13 +282,34 @@ OverlayNav = (function() {
     }
   };
 
+  OverlayNav.prototype.showCenter = function() {
+    return $(".map", this.$node).animate({
+      opacity: 1
+    }, {
+      duration: 200
+    });
+  };
+
+  OverlayNav.prototype.hideCenter = function(speed) {
+    if (speed == null) {
+      speed = 200;
+    }
+    return $(".map", this.$node).animate({
+      opacity: 0
+    }, {
+      duration: speed
+    });
+  };
+
   OverlayNav.prototype.onChangePage = function(pageId) {
     if (!DataVo.pageIsPortfolioProject(pageId)) {
       this.hide();
-      return this.stopScrollListening();
+      this.stopScrollListening();
+      return this.stopKeyPressListening();
     } else {
       this.activatePage(pageId);
-      return this.listenForScroll();
+      this.listenForScroll();
+      return this.listenForKeyPress();
     }
   };
 
@@ -289,12 +322,29 @@ OverlayNav = (function() {
     return this.activePage.addClass("active visited");
   };
 
+  OverlayNav.prototype.listenForScroll = function() {
+    return this.$window.on("scroll", this.onScroll);
+  };
+
   OverlayNav.prototype.stopScrollListening = function() {
     return this.$window.off("scroll", this.onScroll);
   };
 
-  OverlayNav.prototype.listenForScroll = function() {
-    return this.$window.on("scroll", this.onScroll);
+  OverlayNav.prototype.listenForKeyPress = function() {
+    return $(document).on("keydown", this.onKeyPress);
+  };
+
+  OverlayNav.prototype.stopKeyPressListening = function() {
+    return $(document).off("keydown", this.onKeyPress);
+  };
+
+  OverlayNav.prototype.onKeyPress = function(e) {
+    switch (e.which) {
+      case 37:
+        return PubSub.publish('PREV_PROJECT');
+      case 39:
+        return PubSub.publish('NEXT_PROJECT');
+    }
   };
 
   return OverlayNav;

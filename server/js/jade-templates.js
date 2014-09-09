@@ -36,7 +36,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 ;var locals_for_with = (locals || {});(function (DataVo) {
-buf.push("<div class=\"overlay-nav\"><div class=\"right\"></div><div class=\"left\"></div></div><div class=\"map\">");
+buf.push("<div class=\"overlay\"><div class=\"overlay-nav\"><div class=\"right\"></div><div class=\"left\"></div></div><div class=\"map\">");
 // iterate DataVo.portfolio
 ;(function(){
   var $$obj = DataVo.portfolio;
@@ -59,7 +59,7 @@ buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId
   }
 }).call(this);
 
-buf.push("</div>");}.call(this,"DataVo" in locals_for_with?locals_for_with.DataVo:typeof DataVo!=="undefined"?DataVo:undefined));;return buf.join("");
+buf.push("</div></div>");}.call(this,"DataVo" in locals_for_with?locals_for_with.DataVo:typeof DataVo!=="undefined"?DataVo:undefined));;return buf.join("");
 };
 
 templates['pagoda_dash'] = function template(locals) {
