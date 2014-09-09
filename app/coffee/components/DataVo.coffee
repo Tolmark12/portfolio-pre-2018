@@ -20,6 +20,15 @@ class DataVo
     @pages.pagoda_site
   ]
     
+  @getIndexOfProject : (projectId)->
+    for project, i in DataVo.portfolio
+      if projectId == project.id
+        return i
   
-
+  @pageIsPortfolioProject : (projectId)-> 
+    for project in @portfolio
+      if project.id == projectId then return true
+    return false
+      
+      
 

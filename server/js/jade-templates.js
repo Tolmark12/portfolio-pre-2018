@@ -35,8 +35,31 @@ templates['overlay-nav'] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
+;var locals_for_with = (locals || {});(function (DataVo) {
+buf.push("<div class=\"overlay-nav\"><div class=\"right\"></div><div class=\"left\"></div></div><div class=\"map\">");
+// iterate DataVo.portfolio
+;(function(){
+  var $$obj = DataVo.portfolio;
+  if ('number' == typeof $$obj.length) {
 
-buf.push("<div class=\"overlay-nav\"><div class=\"right\"></div><div class=\"left\"></div></div>");;return buf.join("");
+    for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
+      var project = $$obj[index];
+
+buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var index in $$obj) {
+      $$l++;      var project = $$obj[index];
+
+buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</div>");}.call(this,"DataVo" in locals_for_with?locals_for_with.DataVo:typeof DataVo!=="undefined"?DataVo:undefined));;return buf.join("");
 };
 
 templates['pagoda_dash'] = function template(locals) {

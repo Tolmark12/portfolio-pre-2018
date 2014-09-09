@@ -1,3 +1,6 @@
 .overlay-nav
   .right
   .left
+.map
+  each project, index in DataVo.portfolio
+    .project(class=project.id, onclick="PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )") 

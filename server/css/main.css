@@ -162,16 +162,53 @@ li {
   top: 50%;
   width: 100%; }
   .overlay-nav .right, .overlay-nav .left {
-    width: 100px;
-    height: 100px;
-    margin-top: -50px;
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer; }
+    .overlay-nav .right:after, .overlay-nav .left:after {
+      content: "Prev Project";
+      display: block;
+      font-style: italic;
+      font-size: 14px;
+      width: 45px;
+      text-align: center;
+      line-height: 16px;
+      color: #1177AB;
+      margin: 21px auto; }
+  .overlay-nav .left {
+    float: left;
+    margin-left: 20px; }
+  .overlay-nav .right {
+    float: right;
+    margin-right: 20px; }
+    .overlay-nav .right:after {
+      content: "Next Project"; }
+
+.map {
+  position: fixed;
+  width: 240px;
+  margin-right: auto;
+  margin-left: auto;
+  right: 0;
+  left: 0;
+  top: 50%; }
+  .map .project {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: white;
-    cursor: pointer; }
-  .overlay-nav .left {
-    float: left; }
-  .overlay-nav .right {
-    float: right; }
+    display: inline-block;
+    margin: 10px; }
+    .map .project.active {
+      background: #80D2E9;
+      opacity: 1; }
+    .map .project.visited {
+      opacity: 0.7; }
+    .map .project.active.visited {
+      opacity: 1; }
 
 .resistance .lies, .resistance .enemy, .resistance .leaflet {
   background: url(/assets/resist-posters.jpg);
