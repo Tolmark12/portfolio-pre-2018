@@ -1,14 +1,24 @@
 class DataVo
 
   @pages :
-    "/"        : id:"portfolio",  title: ""
-    about      : id:"about",      title: ""
-    contact    : id:"contact",    title: ""
-    portfolio  : id:"portfolio",  title: ""
-    resistance : id:"resistance", title: "Resistance Movement"
-    ibex       : id:"ibex",       title: "IBEX"  
+    "/"            : id:"portfolio",    title: ""
+    about          : id:"about",        title: ""
+    contact        : id:"contact",      title: ""
+    portfolio      : id:"portfolio",    title: ""
+    resistance     : id:"resistance",   title: "Resistance Movement"
+    ibex           : id:"ibex",         title: "Ibex"  
+    playmill       : id:"playmill",     title: "Playmill"  
+    mfa            : id:"mfa",          title: "MFA Thesis"  
+    pagoda_site    : id:"pagoda_site",  title: "Pagoda Box", subtitle:"Front Site"  
+    pagoda_dash    : id:"pagoda_dash",  title: "Pagoda Box", subtitle:"Dashboard"  
 
-  @portfolio : [@pages.resistance,@pages.resistance,@pages.resistance,@pages.resistance,@pages.resistance,@pages.resistance, @pages.ibex]
+  @portfolio : [
+    @pages.resistance
+    @pages.playmill
+    @pages.mfa
+    @pages.pagoda_dash
+    @pages.pagoda_site
+  ]
     
   
 

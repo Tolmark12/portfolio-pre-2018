@@ -1,10 +1,15 @@
+$thmb-width:215px;
 .portfolio-index        { 
   .project              { display: inline-block; cursor: pointer; margin:20px 80px 20px 0;
-    &:after             { content:""; display:block; width:215px; height:215px; background: url(/assets/portfolio-thmbs.jpg); border-radius: 50%; box-shadow: 0px 0px 0px 0pt white; @include transition(box-shadow, 0.3s, cubic-bezier(0.630, 0.000, 0.000, 1));}
+    &:after             { content:""; display:block; width:$thmb-width; height:$thmb-width; background: url(/assets/portfolio-thmbs.jpg); border-radius: 50%; box-shadow: 0px 0px 0px 0pt white; @include transition(box-shadow, 0.3s, cubic-bezier(0.630, 0.000, 0.000, 1));}
     &:hover:after       { box-shadow: 0px 0px 0px 10pt white; @include transition(box-shadow, 0.1s)}
     
     // Icons
-    &.ibex:after        { background-position:0px -0px;}
-    &.resistance:after  { background-position:-211px -0px;}
+    &.playmill:after    { background-position:-$thmb-width*1 -0px;}
+    &.ibex:after        { background-position:-30px -0px;}
+    &.resistance:after  { background-position:0 -0px;}
+    &.mfa:after         { background-position:-$thmb-width*2 -0px;}
+    &.pagoda_dash:after { background-position:-$thmb-width*3 -0px;}
+    &.pagoda_site:after { background-position:-$thmb-width*4 -0px;}
   }
 }

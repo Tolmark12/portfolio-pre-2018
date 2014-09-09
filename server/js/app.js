@@ -104,11 +104,29 @@ DataVo = (function() {
     },
     ibex: {
       id: "ibex",
-      title: "IBEX"
+      title: "Ibex"
+    },
+    playmill: {
+      id: "playmill",
+      title: "Playmill"
+    },
+    mfa: {
+      id: "mfa",
+      title: "MFA Thesis"
+    },
+    pagoda_site: {
+      id: "pagoda_site",
+      title: "Pagoda Box",
+      subtitle: "Front Site"
+    },
+    pagoda_dash: {
+      id: "pagoda_dash",
+      title: "Pagoda Box",
+      subtitle: "Dashboard"
     }
   };
 
-  DataVo.portfolio = [DataVo.pages.resistance, DataVo.pages.resistance, DataVo.pages.resistance, DataVo.pages.resistance, DataVo.pages.resistance, DataVo.pages.resistance, DataVo.pages.ibex];
+  DataVo.portfolio = [DataVo.pages.resistance, DataVo.pages.playmill, DataVo.pages.mfa, DataVo.pages.pagoda_dash, DataVo.pages.pagoda_site];
 
   return DataVo;
 

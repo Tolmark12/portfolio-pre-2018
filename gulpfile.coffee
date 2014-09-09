@@ -10,7 +10,6 @@ fs           = require 'fs'
 git          = require 'gulp-git'
 gulp         = require 'gulp'
 gutil        = require 'gulp-util'
-handlebars   = require 'gulp-handlebars'
 http         = require 'http'
 jade         = require 'gulp-jade'
 livereload   = require 'gulp-livereload'
@@ -33,7 +32,7 @@ cssPath           = 'app/scss/**/*.scss'
 cssStagePath      = 'stage/stage.scss'
 coffeePath        = 'app/coffee/**/*.coffee'
 coffeeStagePath   = 'stage/**/*.coffee'
-assetPath         = ['app/images/*', 'app/video/*']
+assetPath         = ['app/images/**/*', 'app/video/**/*']
 
 
 htmlStage = ->
@@ -48,8 +47,6 @@ html = ->
     .pipe concat('jade-templates.js') 
     .pipe wrap("templates = {};\n<%= file.contents %>")
     .pipe gulp.dest('./server/js') 
-
-gulp.task 'html', -> html()
 
 css = ->
   # Stage css - not included in build
@@ -112,9 +109,6 @@ minifyAndJoin = () ->
       js  : [ uglify(), rev()]
     .pipe(gulp.dest('rel/'));
 
-gulp.task 'min', -> minifyAndJoin()
-gulp.task 'min', -> minifyAndJoin()
-
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
@@ -161,7 +155,7 @@ gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'], -> pushViaGit()
   # ----------- MAIN ----------- #
 
 gulp.task 'clean',                 (cb) -> del ['./server/*',], cb
-gulp.task 'bowerLibs', ['clean'],  () -> copyBowerLibs();
+gulp.task 'bowerLibs', ['clean'],  ()   -> copyBowerLibs();
 gulp.task 'server', ['bowerLibs'], ()   -> watchAndCompileFiles(); server(); launch()
 gulp.task 'default', ['server']
 
