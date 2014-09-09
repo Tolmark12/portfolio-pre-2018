@@ -2,3 +2,4 @@ web1:
   type: static
   httpd_document_root: rel
   httpd_index_list: stage.html
+  httpd_index_list: style.css
