@@ -1,3 +1,11 @@
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
 body {
   font-family: "ff-meta-web-pro", sans-serif;
   background: #D4D4D3;
@@ -133,6 +141,8 @@ li {
     background-position: -645px -0px; }
   .portfolio-index .project.pagoda_site:after {
     background-position: -860px -0px; }
+  .portfolio-index .project.justin_bw_v1:after {
+    background-position: -1075px -0px; }
 
 .meta-data {
   padding: 40px 0 0 0;
@@ -188,24 +198,20 @@ li {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
     cursor: pointer; }
-    .overlay-nav .right:after, .overlay-nav .left:after {
-      content: "Prev Project";
-      display: block;
-      font-style: italic;
-      font-size: 14px;
-      width: 45px;
-      text-align: center;
-      line-height: 16px;
-      color: #1177AB;
-      margin: 21px auto; }
+    .overlay-nav .right svg, .overlay-nav .left svg {
+      pointer-events: none; }
+    .overlay-nav .right:hover svg polyline, .overlay-nav .left:hover svg polyline {
+      stroke: #333; }
   .overlay-nav .left {
     float: left;
     margin-left: 20px; }
+    .overlay-nav .left svg {
+      margin: 12px 0 0 18px; }
   .overlay-nav .right {
     float: right;
     margin-right: 20px; }
-    .overlay-nav .right:after {
-      content: "Next Project"; }
+    .overlay-nav .right svg {
+      margin: 12px 0 0 25px; }
 
 .map {
   position: fixed;
@@ -266,3 +272,27 @@ li {
 .mfa .poster img {
   width: 350px;
   margin: 50px 0 0 50px; }
+
+.justin-bw-v1 .cover img {
+  -webkit-box-shadow: 0px 1px 13px 0px #727272;
+  -moz-box-shadow: 0px 1px 13px 0px #727272;
+  box-shadow: 0px 1px 13px 0px #727272; }
+.justin-bw-v1 .shirt {
+  text-align: center;
+  border: 2px solid #DEDEDD;
+  border-right: none;
+  border-left: none;
+  line-height: 0; }
+.justin-bw-v1 .inside-spread {
+  margin-top: 50px;
+  line-height: 0; }
+.justin-bw-v1 .free-and-site {
+  margin-top: 50px; }
+  .justin-bw-v1 .free-and-site .free-download img {
+    -webkit-box-shadow: 0px 1px 13px 0px #727272;
+    -moz-box-shadow: 0px 1px 13px 0px #727272;
+    box-shadow: 0px 1px 13px 0px #727272; }
+    .justin-bw-v1 .free-and-site .free-download img.front {
+      margin-top: 52px; }
+    .justin-bw-v1 .free-and-site .free-download img.back {
+      margin-top: 20px; }

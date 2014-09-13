@@ -4,11 +4,16 @@ $projectItemHeight:40px;
 
 .overlay-nav       { position: fixed; top: 50%; width:100%; 
   .right, .left    { width:$buttonHeight; height: $buttonHeight; margin-top:$buttonHeight/-2; border-radius: 50%; background: rgba(white, 0.9); cursor:pointer; 
-    &:after        { content:"Prev Project"; display:block; font-style: italic; font-size:14px; width:45px; text-align: center; line-height: 16px; color:#1177AB; margin:21px auto;}
+    svg            { pointer-events:none; }
+    &:hover svg polyline{ stroke:#333; }
+    // &:after        { content:"Prev Project"; display:block; font-style: italic; font-size:14px; width:45px; text-align: center; line-height: 16px; color:#1177AB; margin:21px auto;}
   }
-  .left            { float:left;  margin-left:20px;}
+  .left            { float:left;  margin-left:20px;
+    svg            { margin:12px 0 0 18px; }
+  }
   .right           { float:right; margin-right:20px;
-    &:after        { content:"Next Project";}
+    svg            { margin:12px 0 0 25px; }
+    // &:after        { content:"Next Project";}
   }
 
 }

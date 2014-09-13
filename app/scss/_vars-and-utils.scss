@@ -24,7 +24,7 @@ $lato-black:900;
   }
 }
 
-@mixin drop-shadow ($xoffset:0px, $yoffset:1px, $blur:13px, $color:#050505, $radius:0px) {
+@mixin drop-shadow ($xoffset:0px, $yoffset:1px, $blur:13px, $color:#727272, $radius:0px) {
   -webkit-box-shadow: $xoffset $yoffset $blur $radius $color;
   -moz-box-shadow: $xoffset $yoffset $blur $radius $color;
   box-shadow: $xoffset $yoffset $blur $radius $color;
@@ -36,4 +36,13 @@ $lato-black:900;
   -o-transform: rotate($deg);
   -webkit-transform: rotate($deg);
   transform:rotate($deg);
+}
+
+*{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

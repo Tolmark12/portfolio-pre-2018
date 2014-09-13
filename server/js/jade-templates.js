@@ -23,12 +23,20 @@ var jade_interp;
 buf.push("<div class=\"meta-data pure-g\"><div class=\"overview pure-u-5-12\">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</div><div class=\"my-role pure-u-1-8\"><ul><li>Design</li><li>Illustration</li><li>Photography</li></ul></div><div class=\"collaborators pure-u-1-8\"><ul><li>Neha Tembey - Design</li><li>Jason Campbell - Design</li></ul></div><div class=\"client pure-u-1-4\">Resistance Movement Movie</div></div>");;return buf.join("");
 };
 
+templates['justin_bw_v1'] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<div class=\"justin-bw-v1\"><div class=\"meta-data pure-g\"><div class=\"overview pure-u-5-12\">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</div><div class=\"my-role pure-u-1-4\"><ul><li>Design</li><li>Illustration</li></ul></div><div class=\"client pure-u-1-4\">Resistance Movement Movie</div></div><div class=\"pure-g\"><div class=\"pure-u-5-12 cover\"><img src=\"/assets/justin-bw-v1/cd-cover.jpg\"/></div><div class=\"pure-u-7-12 shirt\"><img src=\"/assets/justin-bw-v1/shirt.jpg\"/></div></div><div class=\"pure-g inside-spread\"><img src=\"/assets/justin-bw-v1/cd-inside.jpg\"/></div><div class=\"pure-g free-and-site\"><div class=\"pure-u-1-3 free-download\"><img src=\"/assets/justin-bw-v1/download-front.gif\" class=\"front\"/><img src=\"/assets/justin-bw-v1/download-back.jpg\" class=\"back\"/></div><div class=\"pure-u-2-3 site\"><img src=\"/assets/justin-bw-v1/site.jpg\"/></div></div></div>");;return buf.join("");
+};
+
 templates['mfa'] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<div class=\"mfa\"><div class=\"meta-data pure-g\"><div class=\"overview pure-u-5-12\">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</div><div class=\"my-role pure-u-1-4\"><ul><li>Design</li><li>Illustration</li></ul></div><div class=\"client pure-u-1-4\">Resistance Movement Movie</div></div><div class=\"pure-g pure-g\"><div class=\"pure-u-9-24 poster\"><img src=\"/assets/mfa/mfa_poster5.jpg\"/></div><div class=\"pure-u-13-24\"><img src=\"/assets/mfa/books1.jpg\"/></div></div></div>");;return buf.join("");
+buf.push("<div class=\"mfa\"><div class=\"meta-data pure-g\"><div class=\"overview pure-u-5-12\">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</div><div class=\"my-role pure-u-1-4\"><ul><li>Design</li><li>Illustration</li></ul></div><div class=\"client pure-u-1-4\">Resistance Movement Movie</div></div><div class=\"pure-g\"><div class=\"pure-u-9-24 poster\"><img src=\"/assets/mfa/mfa_poster5.jpg\"/></div><div class=\"pure-u-13-24\"><img src=\"/assets/mfa/books1.jpg\"/></div></div></div>");;return buf.join("");
 };
 
 templates['overlay-nav'] = function template(locals) {
@@ -36,7 +44,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 ;var locals_for_with = (locals || {});(function (DataVo) {
-buf.push("<div class=\"overlay\"><div class=\"overlay-nav\"><div class=\"right\"></div><div class=\"left\"></div></div><div class=\"map\">");
+buf.push("<div class=\"overlay\"><div class=\"overlay-nav\"><div class=\"right\"><svg x=\"0px\" y=\"0px\" width=\"33.799px\" height=\"56.145px\"><polyline fill=\"none\" stroke=\"#80D2E9\" stroke-width=\"2\" stroke-miterlimit=\"10\" points=\"4.343,2.989 29.98,28.625 4.343,54.262\"></polyline></svg></div><div class=\"left\"><svg x=\"0px\" y=\"0px\" width=\"33.799px\" height=\"56.145px\"><polyline fill=\"none\" stroke=\"#80D2E9\" stroke-width=\"2\" stroke-miterlimit=\"10\" points=\"29.98,2.989 4.343,28.625 29.98,54.262 \"></polyline></svg></div></div><div class=\"map\">");
 // iterate DataVo.portfolio
 ;(function(){
   var $$obj = DataVo.portfolio;

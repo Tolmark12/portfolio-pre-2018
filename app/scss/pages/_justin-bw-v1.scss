@@ -1,0 +1,15 @@
+.justin-bw-v1       {
+  .cover            {  
+    img             { @include drop-shadow;}
+  }  
+  .shirt            { text-align:center; border:2px solid #DEDEDD; border-right:none; border-left:none; line-height: 0;}
+  .inside-spread    { margin-top:50px; line-height: 0;}
+  .free-and-site    { margin-top:50px;
+    .free-download  {
+      img           {@include drop-shadow;
+        &.front     {margin-top:52px}
+        &.back      {margin-top:20px}
+      }
+    }
+  }
+}

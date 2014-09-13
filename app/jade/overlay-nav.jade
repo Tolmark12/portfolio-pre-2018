@@ -1,7 +1,12 @@
 .overlay
   .overlay-nav
     .right
+      svg(x="0px", y="0px", width="33.799px" height="56.145px")
+        polyline( fill="none", stroke="#80D2E9", stroke-width="2", stroke-miterlimit="10", points="4.343,2.989 29.98,28.625 4.343,54.262" )
     .left
+      svg(x="0px", y="0px", width="33.799px" height="56.145px")
+        polyline( fill="none", stroke="#80D2E9", stroke-width="2", stroke-miterlimit="10", points="29.98,2.989 4.343,28.625 29.98,54.262 ")
+
   .map
     each project, index in DataVo.portfolio
       .project(class=project.id, onclick="PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )") 

@@ -24,7 +24,7 @@ class OverlayNav
       @lastPosition = 0
       return
       
-    if diff > 20
+    if diff > 10
       @show()
     else if diff < -1
       @hide()

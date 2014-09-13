@@ -154,10 +154,15 @@ DataVo = (function() {
       id: "pagoda_dash",
       title: "Pagoda Box",
       subtitle: "Dashboard"
+    },
+    justin_bw_v1: {
+      id: "justin_bw_v1",
+      title: "Justin Cash",
+      subtitle: "BW - First Release"
     }
   };
 
-  DataVo.portfolio = [DataVo.pages.resistance, DataVo.pages.playmill, DataVo.pages.mfa, DataVo.pages.pagoda_dash, DataVo.pages.pagoda_site];
+  DataVo.portfolio = [DataVo.pages.resistance, DataVo.pages.playmill, DataVo.pages.mfa, DataVo.pages.justin_bw_v1, DataVo.pages.pagoda_dash, DataVo.pages.pagoda_site];
 
   DataVo.getIndexOfProject = function(projectId) {
     var i, project, _i, _len, _ref;
@@ -240,7 +245,7 @@ OverlayNav = (function() {
       this.lastPosition = 0;
       return;
     }
-    if (diff > 20) {
+    if (diff > 10) {
       this.show();
     } else if (diff < -1) {
       this.hide();
