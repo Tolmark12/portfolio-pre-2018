@@ -1,3 +1,5 @@
 .portfolio-index
-  each project, index in DataVo.portfolio
-    .project(class=project.id, onclick="PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )") 
+  each row, index in DataVo.projectsGrid
+    .row
+      each project, index in row
+        .project(class=project.id, onclick="PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )") 

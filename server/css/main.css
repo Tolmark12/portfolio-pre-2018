@@ -107,10 +107,12 @@ li {
         .top-nav .nav a:last-of-type:after {
           display: none; }
 
+.portfolio-index .row {
+  margin: 30px 0 0 0; }
 .portfolio-index .project {
-  display: inline-block;
+  display: table-cell;
   cursor: pointer;
-  margin: 20px 80px 20px 0; }
+  width: 25%; }
   .portfolio-index .project:after {
     content: "";
     display: block;

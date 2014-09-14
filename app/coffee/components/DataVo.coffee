@@ -14,13 +14,29 @@ class DataVo
     justin_bw_v1   : id:"justin_bw_v1",  title: "Justin Cash", subtitle:"BW - First Release"  
 
   @portfolio : [
-    @pages.resistance
     @pages.playmill
     @pages.mfa
     @pages.justin_bw_v1
     @pages.pagoda_dash
-    @pages.pagoda_site
+    @pages.resistance
+    @pages.pagoda_site    
   ]
+
+  @createProjectRows : () ->
+    DataVo.projectsGrid = []
+    count               = 0
+    ar                  = []
+    totalColumns        = 5
+    for project in @portfolio 
+      ar.push project
+      if ++count == totalColumns
+        console.log "aa"
+        DataVo.projectsGrid.push ar
+        count = 0
+        ar = []
+    DataVo.projectsGrid.push ar
+      
+  
     
   @getIndexOfProject : (projectId)->
     for project, i in DataVo.portfolio

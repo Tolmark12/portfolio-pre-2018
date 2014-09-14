@@ -1,6 +1,7 @@
 $thmb-width:215px;
 .portfolio-index         { 
-  .project               { display: inline-block; cursor: pointer; margin:20px 80px 20px 0;
+  .row                   { margin:30px 0 0 0;}
+  .project               { display: table-cell; cursor: pointer; width: 25%; 
     &:after              { content:""; display:block; width:$thmb-width; height:$thmb-width; background: url(/assets/portfolio-thmbs.jpg); border-radius: 50%; box-shadow: 0px 0px 0px 0pt white; @include transition(box-shadow, 0.3s, cubic-bezier(0.630, 0.000, 0.000, 1));}
     &:hover:after        { box-shadow: 0px 0px 0px 10pt white; @include transition(box-shadow, 0.1s)}
      

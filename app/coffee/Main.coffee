@@ -4,6 +4,7 @@ class Portfolio
     @build()
 
   build : () ->
+    DataVo.createProjectRows()
     @nav        = new TopNav @$el
     @content    = new ContentArea $(".content", @$el)
     @window     = new Window()

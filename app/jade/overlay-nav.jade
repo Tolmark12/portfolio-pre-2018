@@ -8,5 +8,7 @@
         polyline( fill="none", stroke="#80D2E9", stroke-width="2", stroke-miterlimit="10", points="29.98,2.989 4.343,28.625 29.98,54.262 ")
 
   .map
-    each project, index in DataVo.portfolio
-      .project(class=project.id, onclick="PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )") 
+    each row, index in DataVo.projectsGrid
+      .row
+        each project, index in row
+          .project(class=project.id, onclick="PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )") 

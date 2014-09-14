@@ -7,6 +7,7 @@ Portfolio = (function() {
   }
 
   Portfolio.prototype.build = function() {
+    DataVo.createProjectRows();
     this.nav = new TopNav(this.$el);
     this.content = new ContentArea($(".content", this.$el));
     this.window = new Window();
@@ -162,7 +163,27 @@ DataVo = (function() {
     }
   };
 
-  DataVo.portfolio = [DataVo.pages.resistance, DataVo.pages.playmill, DataVo.pages.mfa, DataVo.pages.justin_bw_v1, DataVo.pages.pagoda_dash, DataVo.pages.pagoda_site];
+  DataVo.portfolio = [DataVo.pages.playmill, DataVo.pages.mfa, DataVo.pages.justin_bw_v1, DataVo.pages.pagoda_dash, DataVo.pages.resistance, DataVo.pages.pagoda_site];
+
+  DataVo.createProjectRows = function() {
+    var ar, count, project, totalColumns, _i, _len, _ref;
+    DataVo.projectsGrid = [];
+    count = 0;
+    ar = [];
+    totalColumns = 5;
+    _ref = this.portfolio;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      project = _ref[_i];
+      ar.push(project);
+      if (++count === totalColumns) {
+        console.log("aa");
+        DataVo.projectsGrid.push(ar);
+        count = 0;
+        ar = [];
+      }
+    }
+    return DataVo.projectsGrid.push(ar);
+  };
 
   DataVo.getIndexOfProject = function(projectId) {
     var i, project, _i, _len, _ref;

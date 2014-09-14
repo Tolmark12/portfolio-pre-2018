@@ -45,9 +45,18 @@ var jade_mixins = {};
 var jade_interp;
 ;var locals_for_with = (locals || {});(function (DataVo) {
 buf.push("<div class=\"overlay\"><div class=\"overlay-nav\"><div class=\"right\"><svg x=\"0px\" y=\"0px\" width=\"33.799px\" height=\"56.145px\"><polyline fill=\"none\" stroke=\"#80D2E9\" stroke-width=\"2\" stroke-miterlimit=\"10\" points=\"4.343,2.989 29.98,28.625 4.343,54.262\"></polyline></svg></div><div class=\"left\"><svg x=\"0px\" y=\"0px\" width=\"33.799px\" height=\"56.145px\"><polyline fill=\"none\" stroke=\"#80D2E9\" stroke-width=\"2\" stroke-miterlimit=\"10\" points=\"29.98,2.989 4.343,28.625 29.98,54.262 \"></polyline></svg></div></div><div class=\"map\">");
-// iterate DataVo.portfolio
+// iterate DataVo.projectsGrid
 ;(function(){
-  var $$obj = DataVo.portfolio;
+  var $$obj = DataVo.projectsGrid;
+  if ('number' == typeof $$obj.length) {
+
+    for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
+      var row = $$obj[index];
+
+buf.push("<div class=\"row\">");
+// iterate row
+;(function(){
+  var $$obj = row;
   if ('number' == typeof $$obj.length) {
 
     for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
@@ -62,6 +71,43 @@ buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId
       $$l++;      var project = $$obj[index];
 
 buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</div>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var index in $$obj) {
+      $$l++;      var row = $$obj[index];
+
+buf.push("<div class=\"row\">");
+// iterate row
+;(function(){
+  var $$obj = row;
+  if ('number' == typeof $$obj.length) {
+
+    for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
+      var project = $$obj[index];
+
+buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var index in $$obj) {
+      $$l++;      var project = $$obj[index];
+
+buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</div>");
     }
 
   }
@@ -100,9 +146,18 @@ var jade_mixins = {};
 var jade_interp;
 ;var locals_for_with = (locals || {});(function (DataVo) {
 buf.push("<div class=\"portfolio-index\">");
-// iterate DataVo.portfolio
+// iterate DataVo.projectsGrid
 ;(function(){
-  var $$obj = DataVo.portfolio;
+  var $$obj = DataVo.projectsGrid;
+  if ('number' == typeof $$obj.length) {
+
+    for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
+      var row = $$obj[index];
+
+buf.push("<div class=\"row\">");
+// iterate row
+;(function(){
+  var $$obj = row;
   if ('number' == typeof $$obj.length) {
 
     for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
@@ -117,6 +172,43 @@ buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId
       $$l++;      var project = $$obj[index];
 
 buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</div>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var index in $$obj) {
+      $$l++;      var row = $$obj[index];
+
+buf.push("<div class=\"row\">");
+// iterate row
+;(function(){
+  var $$obj = row;
+  if ('number' == typeof $$obj.length) {
+
+    for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
+      var project = $$obj[index];
+
+buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var index in $$obj) {
+      $$l++;      var project = $$obj[index];
+
+buf.push("<div" + (jade.attr("onclick", "PubSub.publish( 'CHANGE_PAGE', { pageId:'" + project.id + "'} )", true, false)) + (jade.cls(['project',project.id], [null,true])) + "> </div>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</div>");
     }
 
   }
