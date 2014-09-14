@@ -1,0 +1,7 @@
+.logos{
+  .logo           { 
+    img           { @include drop-shadow(0px, 1px, 8px, #AAA); line-height: 0; }
+  }
+  .three-sketches { @include flexbox; margin-top:50px; }
+  .long-sketch    { margin-top:50px;}
+}

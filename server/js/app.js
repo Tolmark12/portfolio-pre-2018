@@ -113,6 +113,11 @@ var DataVo;
 DataVo = (function() {
   function DataVo() {}
 
+  DataVo.emptyPage = {
+    id: "empty",
+    title: ""
+  };
+
   DataVo.pages = {
     "/": {
       id: "portfolio",
@@ -160,17 +165,21 @@ DataVo = (function() {
       id: "justin_bw_v1",
       title: "Justin Cash",
       subtitle: "BW - First Release"
+    },
+    logos: {
+      id: "logos",
+      title: "Various Logos"
     }
   };
 
-  DataVo.portfolio = [DataVo.pages.playmill, DataVo.pages.mfa, DataVo.pages.justin_bw_v1, DataVo.pages.pagoda_dash, DataVo.pages.resistance, DataVo.pages.pagoda_site];
+  DataVo.portfolio = [DataVo.pages.playmill, DataVo.pages.mfa, DataVo.pages.justin_bw_v1, DataVo.pages.pagoda_dash, DataVo.pages.resistance, DataVo.pages.pagoda_site, DataVo.pages.logos];
 
   DataVo.createProjectRows = function() {
     var ar, count, project, totalColumns, _i, _len, _ref;
     DataVo.projectsGrid = [];
     count = 0;
     ar = [];
-    totalColumns = 5;
+    totalColumns = 4;
     _ref = this.portfolio;
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       project = _ref[_i];
@@ -181,6 +190,9 @@ DataVo = (function() {
         count = 0;
         ar = [];
       }
+    }
+    while (count++ < totalColumns) {
+      ar.push(this.emptyPage);
     }
     return DataVo.projectsGrid.push(ar);
   };
@@ -229,7 +241,7 @@ OverlayNav = (function() {
     this.$node.css({
       opacity: 0
     });
-    this.hide();
+    this.$map = $(".map", this.$node);
     $('.right', this.$node).on("click", (function(_this) {
       return function() {
         return PubSub.publish('NEXT_PROJECT');
@@ -255,6 +267,7 @@ OverlayNav = (function() {
         return _this.onChangePage(data.pageId);
       };
     })(this));
+    this.hide();
     this.hideCenter(0);
   }
 
@@ -295,21 +308,18 @@ OverlayNav = (function() {
       this.$node.animate({
         opacity: 0
       }, {
-        duration: 300,
-        complete: (function(_this) {
-          return function() {
-            return _this.$node.css({
-              display: "none"
-            });
-          };
-        })(this)
+        duration: 300
       });
       return this.isHidden = true;
     }
   };
 
   OverlayNav.prototype.showCenter = function() {
-    return $(".map", this.$node).animate({
+    this.$map.stop(true);
+    this.$map.css({
+      display: "block"
+    });
+    return this.$map.animate({
       opacity: 1
     }, {
       duration: 200
@@ -320,10 +330,18 @@ OverlayNav = (function() {
     if (speed == null) {
       speed = 200;
     }
-    return $(".map", this.$node).animate({
+    this.$map.stop(true);
+    return this.$map.animate({
       opacity: 0
     }, {
-      duration: speed
+      duration: speed,
+      complete: (function(_this) {
+        return function() {
+          return _this.$map.css({
+            display: "none"
+          });
+        };
+      })(this)
     });
   };
 

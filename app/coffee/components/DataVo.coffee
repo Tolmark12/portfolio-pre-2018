@@ -1,5 +1,6 @@
 class DataVo
-
+  
+  @emptyPage       : id:"empty", title:""
   @pages :
     "/"            : id:"portfolio",     title: ""
     about          : id:"about",         title: ""
@@ -11,7 +12,9 @@ class DataVo
     mfa            : id:"mfa",           title: "MFA Thesis"  
     pagoda_site    : id:"pagoda_site",   title: "Pagoda Box", subtitle:"Front Site"  
     pagoda_dash    : id:"pagoda_dash",   title: "Pagoda Box", subtitle:"Dashboard"  
-    justin_bw_v1   : id:"justin_bw_v1",  title: "Justin Cash", subtitle:"BW - First Release"  
+    justin_bw_v1   : id:"justin_bw_v1",  title: "Justin Cash", subtitle:"BW - First Release" 
+    logos          : id:"logos",         title: "Various Logos"
+
 
   @portfolio : [
     @pages.playmill
@@ -20,13 +23,14 @@ class DataVo
     @pages.pagoda_dash
     @pages.resistance
     @pages.pagoda_site    
+    @pages.logos   
   ]
 
   @createProjectRows : () ->
     DataVo.projectsGrid = []
     count               = 0
     ar                  = []
-    totalColumns        = 5
+    totalColumns        = 4
     for project in @portfolio 
       ar.push project
       if ++count == totalColumns
@@ -34,6 +38,10 @@ class DataVo
         DataVo.projectsGrid.push ar
         count = 0
         ar = []
+
+    # Add empty pages to the last row
+    while count++ < totalColumns
+      ar.push @emptyPage
     DataVo.projectsGrid.push ar
       
   

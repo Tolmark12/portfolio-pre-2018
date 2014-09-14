@@ -1,8 +1,9 @@
-$buttonHeight     :80px;
-$mapWidth         :240px;
-$projectItemHeight:40px;
+$buttonHeight        :80px;
+$mapWidth            :320px;
+$projectItemHeight   :45px;
+$activeProjectBorder :10px;
 
-.overlay-nav       { position: fixed; top: 50%; width:100%; 
+.overlay-nav       { position: fixed; top: 50%; width:100%; height: 0;
   .right, .left    { width:$buttonHeight; height: $buttonHeight; margin-top:$buttonHeight/-2; border-radius: 50%; background: rgba(white, 0.9); cursor:pointer; 
     svg            { pointer-events:none; }
     &:hover svg polyline{ stroke:#333; }
@@ -18,10 +19,14 @@ $projectItemHeight:40px;
 
 }
 
-.map                { position:fixed; width: $mapWidth; margin-right: auto; margin-left: auto; right:0; left:0; top: 50%;
-  .project          { width:$projectItemHeight; height:$projectItemHeight; border-radius: 50%; background: white; display: inline-block; margin:10px;
-    &.active        { background: #80D2E9; opacity:1;}
-    &.visited       { background: rgba(white,0.4);
+.map                { position:fixed; width: $mapWidth; margin:-60px auto 0; right:0; left:0; top: 50%;
+  .row              { @include flexbox; margin:0 0 50px 0; }
+  .project          { width:$projectItemHeight; height:$projectItemHeight; border-radius: 50%; background: white; display: inline-block; position: relative; border:1px solid #DFDFDF;
+    &.empty         { opacity:0; pointer-events:none; }
+    &.active        { background: #80D2E9; opacity:1; 
+      &:before      { display: block; content:""; width:$projectItemHeight + $activeProjectBorder; height:$projectItemHeight + $activeProjectBorder; background: white; border-radius: 50%; opacity: 0.9; z-index: -1; position: absolute; top:-$activeProjectBorder/2; left:-$activeProjectBorder/2;}
+    }
+    &.visited       { background: rgba(white,0.4); border-color:rgba(#DFDFDF, 0.4);
       &:after       { content:""; display:block; width:60px; height:3px; background: white; @include rotate(-45deg); float:left; margin-top:17px; margin-left:-10px}
     }
     &.active.visited{ background:#80D2E9; 

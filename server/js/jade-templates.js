@@ -31,6 +31,14 @@ var jade_interp;
 buf.push("<div class=\"justin-bw-v1\"><div class=\"meta-data pure-g\"><div class=\"overview pure-u-5-12\">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</div><div class=\"my-role pure-u-1-4\"><ul><li>Design</li><li>Illustration</li></ul></div><div class=\"client pure-u-1-4\">Resistance Movement Movie</div></div><div class=\"pure-g\"><div class=\"pure-u-5-12 cover\"><img src=\"/assets/justin-bw-v1/cd-cover.jpg\"/></div><div class=\"pure-u-7-12 shirt\"><img src=\"/assets/justin-bw-v1/shirt.jpg\"/></div></div><div class=\"pure-g inside-spread\"><img src=\"/assets/justin-bw-v1/cd-inside.jpg\"/></div><div class=\"pure-g free-and-site\"><div class=\"pure-u-1-3 free-download\"><img src=\"/assets/justin-bw-v1/download-front.gif\" class=\"front\"/><img src=\"/assets/justin-bw-v1/download-back.jpg\" class=\"back\"/></div><div class=\"pure-u-2-3 site\"><img src=\"/assets/justin-bw-v1/site.jpg\"/></div></div></div>");;return buf.join("");
 };
 
+templates['logos'] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<div class=\"logos\"><div class=\"three-sketches\"><div class=\"pagoda logo\"><div class=\"descript\">Pagoda Box</div><img src=\"assets/logos/pagoda-box.gif\"/></div><div class=\"distinctive logo\"><div class=\"descript\">Distinctive Creations</div><img src=\"assets/logos/distinctive-creations.gif\"/></div><div class=\"leprechaun logo\"><div class=\"descript\">Leprechaun's Box</div><img src=\"assets/logos/leprechaun-box.gif\"/></div></div><div class=\"pure-g long-sketch\"><div class=\"descript\">Various Logos Sketches</div><img src=\"/assets/logos/long-sketch.jpg\"/></div></div>");;return buf.join("");
+};
+
 templates['mfa'] = function template(locals) {
 var buf = [];
 var jade_mixins = {};

@@ -46,3 +46,26 @@ $lato-black:900;
   -ms-user-select: none;
   user-select: none;
 }
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-justify-content:space-between;
+  -moz-justify-content:space-between;
+  -ms-justify-content:space-between;
+  -webkit-justify-content:space-between;
+  justify-content:space-between;
+}
+
+@mixin flexitem() {
+  -webkit-box-flex: 1;
+  -moz-box-flex:  1;
+  -webkit-flex:  1;
+  -ms-flex:  1;
+  flex:  1;
+}
+

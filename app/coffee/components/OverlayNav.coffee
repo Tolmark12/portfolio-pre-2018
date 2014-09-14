@@ -6,7 +6,7 @@ class OverlayNav
     @$window = $ window
     $('body').append( @$node )
     @$node.css opacity:0
-    @hide()
+    @$map = $(".map", @$node)
     
     $('.right', @$node).on "click",             ()=> PubSub.publish 'NEXT_PROJECT'
     $('.left',  @$node).on "click",             ()=> PubSub.publish 'PREV_PROJECT'
@@ -14,6 +14,7 @@ class OverlayNav
     $('.left, .right',  @$node).on "mouseout",  ()=> @hideCenter()
 
     PubSub.subscribe 'CHANGE_CONTENT', (msg, data)=> @onChangePage data.pageId
+    @hide()
     @hideCenter(0)
 
 
@@ -40,11 +41,16 @@ class OverlayNav
   hide : () -> 
     if !@isHidden
       @$node.stop true
-      @$node.animate {opacity:0}, {duration:300, complete:()=> @$node.css({display:"none"}) }
+      @$node.animate {opacity:0}, {duration:300 }
       @isHidden = true
 
-  showCenter : ()          -> $(".map", @$node).animate {opacity:1}, {duration:200}
-  hideCenter : (speed=200) -> $(".map", @$node).animate {opacity:0}, {duration:speed}
+  showCenter : ()          -> 
+    @$map.stop true
+    @$map.css display:"block"
+    @$map.animate {opacity:1}, {duration:200}
+  hideCenter : (speed=200) -> 
+    @$map.stop true
+    @$map.animate {opacity:0}, {duration:speed, complete:()=> @$map.css({display:"none"})}
   
   onChangePage : (pageId) ->
     if !DataVo.pageIsPortfolioProject( pageId)
