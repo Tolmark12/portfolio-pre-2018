@@ -159,7 +159,7 @@ watchAndCompileFiles = (cb)->
 
 gulp.task 'rel:clean',              (cb) -> del( ['./rel/*'], cb); console.log "!! IMPORTANT !! If you haven't already, make sure you run 'gulp' before 'gulp rel'"
 gulp.task 'bumpVersion',            ()   -> bumpBowerVersion()
-gulp.task 'copyAssets',             ()   -> copyAssets('rel/assets')
+gulp.task 'copyAssets',             ()   -> copyAssets('rel/assets', ->)
 gulp.task 'minify',['copyAssets'],  ()   -> minifyAndJoin(); 
 gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'], -> pushViaGit()
 

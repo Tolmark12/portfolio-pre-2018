@@ -164,7 +164,7 @@ DataVo = (function() {
     justin_bw_v1: {
       id: "justin_bw_v1",
       title: "Justin Cash",
-      subtitle: "BW - First Release"
+      subtitle: "Inital Release"
     },
     logos: {
       id: "logos",

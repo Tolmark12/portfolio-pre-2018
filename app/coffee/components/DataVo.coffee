@@ -12,7 +12,7 @@ class DataVo
     mfa            : id:"mfa",           title: "MFA Thesis"  
     pagoda_site    : id:"pagoda_site",   title: "Pagoda Box", subtitle:"Front Site"  
     pagoda_dash    : id:"pagoda_dash",   title: "Pagoda Box", subtitle:"Dashboard"  
-    justin_bw_v1   : id:"justin_bw_v1",  title: "Justin Cash", subtitle:"BW - First Release" 
+    justin_bw_v1   : id:"justin_bw_v1",  title: "Justin Cash", subtitle:"Inital Release" 
     logos          : id:"logos",         title: "Various Logos"
 
 

@@ -36,7 +36,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<div class=\"logos\"><div class=\"three-sketches\"><div class=\"pagoda logo\"><div class=\"descript\">Pagoda Box</div><img src=\"assets/logos/pagoda-box.gif\"/></div><div class=\"distinctive logo\"><div class=\"descript\">Distinctive Creations</div><img src=\"assets/logos/distinctive-creations.gif\"/></div><div class=\"leprechaun logo\"><div class=\"descript\">Leprechaun's Box</div><img src=\"assets/logos/leprechaun-box.gif\"/></div></div><div class=\"pure-g long-sketch\"><div class=\"descript\">Various Logos Sketches</div><img src=\"/assets/logos/long-sketch.jpg\"/></div></div>");;return buf.join("");
+buf.push("<div class=\"logos\"><div class=\"three-sketches\"><div class=\"pagoda logo\"><div class=\"descript\">Pagoda Box</div><img src=\"assets/logos/pagoda-box.gif\"/></div><div class=\"distinctive logo\"><div class=\"descript\">Distinctive Creations</div><img src=\"assets/logos/distinctive-creations.gif\"/></div><div class=\"leprechaun logo\"><div class=\"descript\">Leprechaun's Box</div><img src=\"assets/logos/leprechaun-box.gif\"/></div></div><div class=\"pure-g long-sketch\"><div class=\"descript\">Ideation Sketches</div><img src=\"/assets/logos/long-sketch.jpg\"/></div></div>");;return buf.join("");
 };
 
 templates['mfa'] = function template(locals) {
