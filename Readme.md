@@ -5,4 +5,7 @@
 
   Image Sequence (Awesome!:
   http://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/image_sequence
+
+  Pretty sweet use of video:
+  https://www.fiftythree.com/paper
 ```

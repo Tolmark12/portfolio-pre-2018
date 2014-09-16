@@ -1,7 +1,12 @@
 .logos{
-  .logo           { 
-    img           { @include drop-shadow(0px, 1px, 8px, #AAA); line-height: 0; }
+  .descript                { margin-top:80px}
+  .logo                    { 
+    img                    { /*@include drop-shadow(0px, 1px, 8px, #AAA);*/ line-height: 0; }
+  }      
+  .three-sketches          { @include flexbox; margin-top:50px; 
+    .descript              { margin-top:20px;}
   }
-  .three-sketches { @include flexbox; margin-top:50px; }
-  .long-sketch    { margin-top:50px;}
+  .long-sketch             { margin-top:10px;}
+  .yhc-stationary img      {float: right}
+  .talking-stationary img  {margin:21px 0 0 46px;}
 }
