@@ -17,11 +17,11 @@ class DataVo
 
 
   @portfolio : [
-    @pages.playmill
+    @pages.resistance
     @pages.mfa
     @pages.justin_bw_v1
     @pages.pagoda_dash
-    @pages.resistance
+    @pages.playmill
     @pages.pagoda_site    
     @pages.logos   
   ]

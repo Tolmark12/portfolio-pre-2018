@@ -1,7 +1,15 @@
 .resistance                   {
-  .lies, .enemy, .leaflet { background:url(/assets/resist-posters.jpg); width:350px; height:523px; background-position:-0px -0px;}
-  .lies                   {  } 
-  .enemy                  { margin:0 auto; width:348px; height:523px; background-position:-351px -0px; } 
-  .leaflet                { float: right; width:348px; height:523px; background-position:-702px -0px; }
-  .play-poster            {  }
+  .lies, .leaflet, .enemy     { 
+    img                       { @include drop-shadow(0px, 1px, 6px, #888); }
+  }
+  .mid                        { margin-top:60px;
+    .hitler-youth             { margin:0 0 0 20px; }
+    .paper                    { margin:0 0 0 100px; }
+    .browser                  { margin-left:6px; @include drop-shadow(0px, 1px, 6px, #444);}
+  }
+  .three                      { margin-top:60px ;
+    .leaflet img              { margin-left:8px}
+    .lies img                 { }
+    .enemy img                { float:right;}
+  }
 }
