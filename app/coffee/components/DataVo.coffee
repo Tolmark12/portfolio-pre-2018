@@ -2,18 +2,21 @@ class DataVo
   
   @emptyPage       : id:"empty", title:""
   @pages :
-    "/"            : id:"portfolio",     title: ""
-    about          : id:"about",         title: ""
-    contact        : id:"contact",       title: ""
-    portfolio      : id:"portfolio",     title: ""
-    resistance     : id:"resistance",    title: "Resistance Movement"
-    ibex           : id:"ibex",          title: "Ibex"  
-    playmill       : id:"playmill",      title: "Playmill"  
-    mfa            : id:"mfa",           title: "MFA Thesis"  
-    pagoda_site    : id:"pagoda_site",   title: "Pagoda Box", subtitle:"Front Site"  
-    pagoda_dash    : id:"pagoda_dash",   title: "Pagoda Box", subtitle:"Dashboard"  
-    justin_bw_v1   : id:"justin_bw_v1",  title: "Justin Cash", subtitle:"Inital Release" 
-    logos          : id:"logos",         title: "Various Logos"
+    "/"            : id:"portfolio",         title: ""
+    about          : id:"about",             title: ""
+    contact        : id:"contact",           title: ""
+    portfolio      : id:"portfolio",         title: ""
+    resistance     : id:"resistance",        title: "Resistance Movement"
+    ibex           : id:"ibex",              title: "Ibex"  
+    playmill       : id:"playmill",          title: "Playmill"  
+    mfa            : id:"mfa",               title: "MFA Thesis"  
+    pagoda_site    : id:"pagoda_site",       title: "Pagoda Box", subtitle:"Front Site"  
+    pagoda_dash    : id:"pagoda_dash",       title: "Pagoda Box", subtitle:"Dashboard"  
+    justin_bw_v1   : id:"justin_bw_v1",      title: "Justin Cash", subtitle:"Inital Release" 
+    logos          : id:"logos",             title: "Various Logos"
+    logos          : id:"logos",             title: "Various Logos"
+    design_process : id:"design_process",    title: "Design Process"
+
 
 
   @portfolio : [
@@ -24,6 +27,7 @@ class DataVo
     @pages.playmill
     @pages.pagoda_site    
     @pages.logos   
+    @pages.design_process   
   ]
 
   @createProjectRows : () ->

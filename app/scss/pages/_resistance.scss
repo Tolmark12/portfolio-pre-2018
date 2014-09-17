@@ -1,4 +1,7 @@
 .resistance                   {
+  .pure-g  {margin-bottom:110px;}
+  .meta-data.pure-g  {margin-bottom:60px;}
+
   .lies, .leaflet, .enemy     { 
     img                       { @include drop-shadow(0px, 1px, 6px, #888); }
   }

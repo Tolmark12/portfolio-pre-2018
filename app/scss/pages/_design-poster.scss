@@ -1,0 +1,12 @@
+.design_poster  {
+  .mini         { position: relative; cursor:pointer; margin-top:360px; 
+    p           { font-size:13px; font-style: italic; color:#939394; font-weight: bold; margin: 0 0 5px 0; }
+    svg         { position: absolute; top :81px; right:30px; 
+      .st0      { fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10; }
+      .st1      { fill:#ED4655; @include transition(fill, 0.1s);}
+    }
+    &:hover     {
+      svg .st1  { fill:#80D2E9; @include transition(fill, 0.05s); }
+    }
+  }
+}
