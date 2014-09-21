@@ -1,7 +1,7 @@
 class Window
 
   constructor: () ->
-    @defaultPage = 'resistance'
+    @defaultPage = 'index'
     # Subscribe to change page click events from
     PubSub.subscribe 'CHANGE_PAGE', (msg, data)=> @changePage data
     History.Adapter.bind window,'statechange', @onWindowStateChange

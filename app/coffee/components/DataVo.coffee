@@ -2,10 +2,10 @@ class DataVo
   
   @emptyPage       : id:"empty", title:""
   @pages :
-    "/"            : id:"portfolio",         title: ""
+    "/"            : id:"index",             title: ""
     about          : id:"about",             title: ""
     contact        : id:"contact",           title: ""
-    portfolio      : id:"portfolio",         title: ""
+    index          : id:"index",             title: ""
     resistance     : id:"resistance",        title: "Resistance Movement"
     ibex           : id:"ibex",              title: "Ibex"  
     playmill       : id:"playmill",          title: "Playmill"  
@@ -20,14 +20,14 @@ class DataVo
 
 
   @portfolio : [
-    @pages.resistance
     @pages.mfa
     @pages.justin_bw_v1
-    @pages.pagoda_dash
     @pages.playmill
-    @pages.pagoda_site    
+    @pages.resistance
     @pages.logos   
     @pages.design_process   
+    @pages.pagoda_site    
+    @pages.pagoda_dash
   ]
 
   @createProjectRows : () ->
@@ -38,7 +38,6 @@ class DataVo
     for project in @portfolio 
       ar.push project
       if ++count == totalColumns
-        console.log "aa"
         DataVo.projectsGrid.push ar
         count = 0
         ar = []
