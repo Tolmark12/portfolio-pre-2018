@@ -24,7 +24,7 @@ usemin       = require 'gulp-usemin'
 watch        = require 'gulp-watch'
 wrap         = require 'gulp-wrap'
 
-
+# Not yet added back into my yeoman generator
 rimraf       = require 'rimraf'
 
 # Paths to source files
