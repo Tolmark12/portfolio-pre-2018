@@ -1,7 +1,24 @@
 body     {font-family:  $meta; background: #D4D4D3; -webkit-font-smoothing: antialiased;}
 h1       {font-family: $lato; }
 a        {text-decoration: none; color:#3A90AF; }
-.wrapper { margin:0 auto; width:1215px; padding-bottom:40px;}
+
 ul       {margin:0; padding:0;}
 li       {display:block}
 .pure-g  {margin-bottom:80px;}
+img      {height:auto; max-width: 100%; display: block;}
+
+
+.wrapper { margin:0 auto; }
+
+@media  (min-width: 1216px){
+  .wrapper { max-width:1215px;}
+}
+
+@media  (max-width: 1215px) and (min-width: 1025px){
+  .wrapper { max-width:100%;}
+}
+
+
+@media all and (max-width: 1024px){
+  .wrapper { min-width:1024px;}
+}

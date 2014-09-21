@@ -25,6 +25,7 @@
     "gulp-usemin": "~0.3.8",
     "gulp-util": "~2.2.20",
     "gulp-watch": "^0.6.9",
-    "gulp-wrap": "~0.3.0"
+    "gulp-wrap": "~0.3.0",
+    "rimraf": "~2.2.8"
   }
 }

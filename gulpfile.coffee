@@ -24,6 +24,9 @@ usemin       = require 'gulp-usemin'
 watch        = require 'gulp-watch'
 wrap         = require 'gulp-wrap'
 
+
+rimraf       = require 'rimraf'
+
 # Paths to source files
 
 jadeStagePath     = 'stage/stage.jade'
@@ -100,6 +103,7 @@ pushViaGit = ->
   fs.readFile './bower.json', 'utf8', (err, data) =>
     regex   = /version"\s*:\s*"(.+)"/
     version = data.match(regex)[1]
+    console.log "Bumped to #{version}"
     gulp.src('./')
       .pipe git.add( args:"--all" )
       .pipe git.commit("BUILD - #{version}")
@@ -157,11 +161,11 @@ watchAndCompileFiles = (cb)->
 
 # ----------- BUILD (rel) ----------- #
 
-gulp.task 'rel:clean',              (cb) -> del( ['./rel/*'], cb); console.log "!! IMPORTANT !! If you haven't already, make sure you run 'gulp' before 'gulp rel'"
-gulp.task 'bumpVersion',            ()   -> bumpBowerVersion()
-gulp.task 'copyAssets',             ()   -> copyAssets('rel/assets', ->)
-gulp.task 'minify',['copyAssets'],  ()   -> minifyAndJoin(); 
-gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'], -> pushViaGit()
+gulp.task 'rel:clean',                   (cb) -> rimraf('./rel', cb);; console.log "!! IMPORTANT !! If you haven't already, make sure you run 'gulp' before 'gulp rel'"
+gulp.task 'bumpVersion',["rel:clean"] ,  ()   -> bumpBowerVersion()
+gulp.task 'copyAssets',['bumpVersion'],  ()   -> copyAssets('rel/assets', ->)
+gulp.task 'minify',['copyAssets'],       ()   -> minifyAndJoin()
+gulp.task 'rel', [ 'minify'],            ()   -> pushViaGit()
 
 
   # ----------- MAIN ----------- #
