@@ -5,7 +5,9 @@
     &:after           { top:-430px; height: 1000px; right:0; }
     &:before          { top:280px; height: 800px; }
   }
-  .datacenter-bug     { @include center(); margin-top:130px; }
+  .datacenter-bug     { margin-top:130px; 
+    img                { @include center(); }
+  }
   .languages          { margin:30px 0 0 0;
     img               { @include center(); padding: 100px 0 0 0; border-top:solid 1px #BBB; }
   }
