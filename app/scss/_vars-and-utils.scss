@@ -69,7 +69,10 @@ $lato-black:900;
   flex:  1;
 }
 
-@mixin center() { display:block; margin:0 auto; }
+@mixin center() { 
+  display:block; 
+  margin:0 auto; 
+}
 
 @mixin vertical-align {
   position: relative;

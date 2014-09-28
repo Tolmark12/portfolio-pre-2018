@@ -3,7 +3,7 @@
   .details            { position: relative; 
     &:before, &:after { content: ""; border-right:solid 1px #BCBCBB; position: absolute;  }
     &:after           { top:-430px; height: 1000px; right:0; }
-    &:before           { top:280px; height: 800px; }
+    &:before          { top:280px; height: 800px; }
   }
   .datacenter-bug     { @include center(); margin-top:130px; }
   .languages          { margin:30px 0 0 0;
