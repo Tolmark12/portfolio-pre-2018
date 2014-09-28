@@ -1,14 +1,16 @@
 @import 'vars-and-utils';
 @import 'base';
 @import 'top-nav';
-@import 'portfolio-index';
 @import 'portfolio';
 @import 'overlay-nav';
 
 // Pages
+@import 'pages/index';
 @import 'pages/resistance';
 @import 'pages/playmill';
 @import 'pages/mfa';
 @import 'pages/justin-bw-v1';
 @import 'pages/logos';
 @import 'pages/design-poster';
+@import 'pages/pagoda-pricing';
+@import 'pages/pagoda-home';

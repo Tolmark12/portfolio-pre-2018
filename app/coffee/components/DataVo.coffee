@@ -16,6 +16,7 @@ class DataVo
     logos          : id:"logos",             title: "Various Logos"
     logos          : id:"logos",             title: "Various Logos"
     design_process : id:"design_process",    title: "Design Process"
+    pagoda_pricing : id:"pagoda_pricing",    title: "Pagoda Box", subtitle:"Pricing App"  
 
 
 
@@ -27,6 +28,7 @@ class DataVo
     @pages.logos   
     @pages.design_process   
     @pages.pagoda_site    
+    @pages.pagoda_pricing
     @pages.pagoda_dash
   ]
 
