@@ -18,9 +18,9 @@ class TopNav
     PubSub.publish( 'CHANGE_PAGE', { pageId:data.id })
 
   changePageTitleTxt : (title, subtitle) ->
-    $('.title-block', @$node).animate {opacity:0}, duration:200, complete:()=>
+    $('.title-block', @$node).velocity {opacity:0}, duration:200, complete:()=>
       $('.title', @$node).text title
-      $('.title-block', @$node).animate {opacity:1}, {duration:200}
+      $('.title-block', @$node).velocity {opacity:1}, {duration:200}
 
       if subtitle?
         $('.subtitle', @$node).text subtitle

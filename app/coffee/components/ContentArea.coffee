@@ -14,15 +14,15 @@ class ContentArea
       @loadPage page
   
   unloadCurrentPage : (newPage) ->
-    @$el.animate {opacity:0}, duration:200, complete:()=> @loadPage newPage
+    @$el.velocity {opacity:0}, duration:200, complete:()=> @loadPage newPage
 
   loadPage : (page) ->
     @currentPage = page
     @$el.empty()
-    node = templates[ page ]()
+    node = templates[ "pages/"+page ]()
     $node = $(node)
     @$el.append( $node )
-    @$el.animate {opacity:1}, duration:400
+    @$el.velocity {opacity:1}, duration:400
     $("html, body").scrollTop 0
 
   

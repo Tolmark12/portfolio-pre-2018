@@ -1,9 +1,10 @@
 class OverlayNav
 
   constructor: () ->
-    node = templates['overlay-nav']()
-    @$node = $(node)
-    @$window = $ window
+    node       = templates['overlay-nav']()
+    @$node     = $(node)
+    @$window   = $ window
+    @$document = $(document)
     $('body').append( @$node )
     @$node.css opacity:0
     @$map = $(".map", @$node)
@@ -20,12 +21,13 @@ class OverlayNav
 
   onScroll : () =>
     curPos = @$window.scrollTop()
+    perc   = (curPos + @$window.height()) / @$document.height()
     diff = @lastPosition - curPos
     if curPos < 0
       @lastPosition = 0
       return
       
-    if diff > 10
+    if diff > 10 || perc > 0.9
       @show()
     else if diff < -1
       @hide()
@@ -35,22 +37,22 @@ class OverlayNav
     if @isHidden
       @$node.stop true
       @$node.css display:"block"
-      @$node.animate {opacity:1}, {duration:500}
+      @$node.velocity {opacity:1}, {duration:500}
       @isHidden = false
   
   hide : () -> 
     if !@isHidden
       @$node.stop true
-      @$node.animate {opacity:0}, {duration:300 }
+      @$node.velocity {opacity:0}, {duration:300 }
       @isHidden = true
 
   showCenter : ()          -> 
     @$map.stop true
     @$map.css display:"block"
-    @$map.animate {opacity:1}, {duration:200}
+    @$map.velocity {opacity:1}, {duration:200}
   hideCenter : (speed=200) -> 
     @$map.stop true
-    @$map.animate {opacity:0}, {duration:speed, complete:()=> @$map.css({display:"none"})}
+    @$map.velocity {opacity:0}, {duration:speed, complete:()=> @$map.css({display:"none"})}
   
   onChangePage : (pageId) ->
     if !DataVo.pageIsPortfolioProject( pageId)

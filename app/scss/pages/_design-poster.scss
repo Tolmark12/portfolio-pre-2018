@@ -1,12 +1,23 @@
 .design_poster  {
-  .mini         { position: relative; cursor:pointer; margin-top:360px; 
-    p           { font-size:13px; font-style: italic; color:#939394; font-weight: bold; margin: 0 0 5px 0; }
-    svg         { position: absolute; top :81px; right:30px; 
-      .st0      { fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10; }
-      .st1      { fill:#ED4655; @include transition(fill, 0.1s);}
+  .top          {position: relative;}
+  a             { position: absolute; cursor:pointer; top:8px; right:10px;
+    svg         { 
+      .bg       { fill:#ED4655; opacity:0; @include transition; }
+      .st0      { fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+      .st1      { fill:#80D2E9;}
+      .st2      { fill:#ED4655;}
+      .st3      { fill:#FFFFFF;}
+      .st4      { font-family:'Lato-Bold';}
+      .st5      { letter-spacing:1px;}
+      .st6      { font-size:14px;}
+      .st7      { fill:none;stroke:#EDEEF1;stroke-width:3;stroke-miterlimit:10;}
+      .blue     { @include transition; }
     }
     &:hover     {
-      svg .st1  { fill:#80D2E9; @include transition(fill, 0.05s); }
+      svg       {
+        .bg     { opacity:0.7; }
+        .blue   { fill:black; }
+      }
     }
   }
 }

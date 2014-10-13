@@ -13,23 +13,29 @@ class DataVo
     pagoda_site    : id:"pagoda_site",       title: "Pagoda Box", subtitle:"Front Site"  
     pagoda_dash    : id:"pagoda_dash",       title: "Pagoda Box", subtitle:"Dashboard"  
     justin_bw_v1   : id:"justin_bw_v1",      title: "Justin Cash", subtitle:"Inital Release" 
+    justin_bw_v2   : id:"justin_bw_v2",      title: "Justin Cash", subtitle:"CD Reissue" 
     logos          : id:"logos",             title: "Various Logos"
     logos          : id:"logos",             title: "Various Logos"
     design_process : id:"design_process",    title: "Design Process"
     pagoda_pricing : id:"pagoda_pricing",    title: "Pagoda Box", subtitle:"Pricing App"  
+    form_studies   : id:"form_studies",      title: "Form Studies"
+    odds_and_ends  : id:"odds_and_ends",     title: "Odds & Ends"
 
 
 
   @portfolio : [
     @pages.mfa
-    @pages.justin_bw_v1
-    @pages.playmill
-    @pages.resistance
     @pages.logos   
+    @pages.justin_bw_v1
+    @pages.justin_bw_v2
     @pages.design_process   
+    @pages.resistance
+    @pages.playmill
     @pages.pagoda_site    
     @pages.pagoda_pricing
     @pages.pagoda_dash
+    @pages.form_studies
+    @pages.odds_and_ends
   ]
 
   @createProjectRows : () ->

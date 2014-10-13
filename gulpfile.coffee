@@ -18,14 +18,12 @@ minifyHtml   = require 'gulp-minify-html'
 open         = require "gulp-open"
 plumber      = require 'gulp-plumber'
 rev          = require 'gulp-rev'
+rimraf       = require 'rimraf'
 sass         = require 'gulp-sass'
 uglify       = require 'gulp-uglify'
 usemin       = require 'gulp-usemin'
 watch        = require 'gulp-watch'
 wrap         = require 'gulp-wrap'
-
-# Not yet added back into my yeoman generator
-rimraf       = require 'rimraf'
 
 # Paths to source files
 
@@ -150,18 +148,18 @@ watchAndCompileFiles = (cb)->
   count = 0
   onComplete = ()=> if ++count == 6 then cb()
 
-  watch { glob:coffeePath      },  -> js(onComplete).pipe                            livereload() 
-  watch { glob:cssPath         },  -> css(onComplete).pipe                           livereload()
-  watch { glob:jadePath        },  -> html(onComplete).pipe                          livereload() 
-  watch { glob:coffeeStagePath },  -> jsStage(onComplete).pipe                       livereload() 
-  watch { glob:cssStagePath    },  -> cssStage(onComplete).pipe                      livereload()
-  watch { glob:jadeStagePath   },  -> htmlStage(onComplete).pipe                     livereload() 
-  watch { glob:assetPath       },  -> copyAssets('server/assets', onComplete).pipe   livereload() 
+  watch { glob:coffeePath      },  -> js(onComplete).pipe                            livereload(35731) 
+  watch { glob:cssPath         },  -> css(onComplete).pipe                           livereload(35731)
+  watch { glob:jadePath        },  -> html(onComplete).pipe                          livereload(35731) 
+  watch { glob:coffeeStagePath },  -> jsStage(onComplete).pipe                       livereload(35731) 
+  watch { glob:cssStagePath    },  -> cssStage(onComplete).pipe                      livereload(35731)
+  watch { glob:jadeStagePath   },  -> htmlStage(onComplete).pipe                     livereload(35731) 
+  watch { glob:assetPath       },  -> copyAssets('server/assets', onComplete).pipe   livereload(35731) 
 
 
 # ----------- BUILD (rel) ----------- #
 
-gulp.task 'rel:clean',                   (cb) -> rimraf('./rel', cb);; console.log "!! IMPORTANT !! If you haven't already, make sure you run 'gulp' before 'gulp rel'"
+gulp.task 'rel:clean',                   (cb) -> rimraf('./rel', cb); console.log "!! IMPORTANT !! If you haven't already, make sure you run 'gulp' before 'gulp rel'"
 gulp.task 'bumpVersion',["rel:clean"] ,  ()   -> bumpBowerVersion()
 gulp.task 'copyAssets',['bumpVersion'],  ()   -> copyAssets('rel/assets', ->)
 gulp.task 'minify',['copyAssets'],       ()   -> minifyAndJoin()

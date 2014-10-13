@@ -1,0 +1,8 @@
+.form-studies    { 
+  .first         { margin-top:90px}
+  img            { border: solid #E8E8E7 18px; margin:0 auto;   }
+  .image         { position: relative; 
+    .mini-descript {  position:absolute; bottom:0; right:200px; font-size:14px; font-style: italic; color:#9D9D9E; display:block; width:120px; margin-left:20px; line-height: 20px;  }
+  }
+  .dark img      { border-color:#2B2B2D ;}
+}

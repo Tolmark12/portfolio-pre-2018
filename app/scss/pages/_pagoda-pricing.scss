@@ -1,4 +1,7 @@
 .pagoda-pricing                {
+  .vid                         {
+    video                      { display: block; @include drop-shadow(); margin:0 auto;}
+  }
   .ipad, .pawns                { margin:70px 0 0 0;
     img                        { margin:0 auto; diaplay:block; }
   }
