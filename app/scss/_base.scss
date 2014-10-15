@@ -5,7 +5,7 @@ a        {text-decoration: none; color:#3A90AF; }
 ul       {margin:0; padding:0;}
 li       {display:block}
 .pure-g  {margin-bottom:80px;}
-img      {height:auto; max-width: 100%; display: block;}
+img      {height:auto; max-width: 100%; display: block;@include transition(opacity)}
 
 
 .wrapper { margin:0 auto; }

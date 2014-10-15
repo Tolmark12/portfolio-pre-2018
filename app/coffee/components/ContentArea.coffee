@@ -24,15 +24,18 @@ class ContentArea
     @$el.append( $node )
     @$el.velocity {opacity:1}, duration:400
 
-    console.log $("img", $node)
-    $("img", $node).unveil -300, ()-> 
-      console.log "??"
-      $(this).load ()=>
-        console.log("asdf")
-        # this.style.opacity = 1;
+    $("img[data-src='*']", $node).css( opacity:0, width:"50px"; height:"50px" )
+    $("img", $node).unveil 500, ()-> 
+      $(this).load ()->
+        this.style.opacity = 1;
     $("html, body").scrollTop 0
 
-  
+    # Wait for element to actually be added to the dom..
+    setTimeout ()=>
+      $(window).trigger("scroll.unveil")
+    , 
+      60
+
   nextProject : () -> 
     newProjectIndex = DataVo.getIndexOfProject(@currentPage) + 1
     if newProjectIndex < DataVo.portfolio.length
