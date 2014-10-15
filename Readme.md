@@ -9,4 +9,6 @@
   
   Pretty sweet use of video:
   https://www.fiftythree.com/paper
+
+  Lazy loading images : http://luis-almeida.github.io/unveil/
 ```

@@ -23,6 +23,13 @@ class ContentArea
     $node = $(node)
     @$el.append( $node )
     @$el.velocity {opacity:1}, duration:400
+
+    console.log $("img", $node)
+    $("img", $node).unveil -300, ()-> 
+      console.log "??"
+      $(this).load ()=>
+        console.log("asdf")
+        # this.style.opacity = 1;
     $("html, body").scrollTop 0
 
   

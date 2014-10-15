@@ -21,16 +21,18 @@ $activeProjectBorder :10px;
 
 .map                { position:fixed; width: $mapWidth; margin:-60px auto 0; right:0; left:0; top: 50%;
   .row              { @include flexbox; margin:0 0 50px 0; }
-  .project          { width:$projectItemHeight; height:$projectItemHeight; border-radius: 50%; background: white; display: inline-block; position: relative; border:1px solid #DFDFDF;
+  .project          { width:$projectItemHeight; height:$projectItemHeight; border-radius: 50%; background: white; display: inline-block; position: relative;
     &.empty         { opacity:0; pointer-events:none; }
     &.active        { background: #80D2E9; opacity:1; 
-      &:before      { display: block; content:""; width:$projectItemHeight + $activeProjectBorder; height:$projectItemHeight + $activeProjectBorder; background: white; border-radius: 50%; opacity: 0.9; z-index: -1; position: absolute; top:-$activeProjectBorder/2; left:-$activeProjectBorder/2;}
+      &:before      { display: block; content:""; width:$projectItemHeight; height:$projectItemHeight; background: white; border-radius: 50%; opacity: 0.9; z-index: -1; position: absolute; top:-$activeProjectBorder/2; left:-$activeProjectBorder/2;}
     }
-    &.visited       { background: rgba(white,0.4); border-color:rgba(#DFDFDF, 0.4);
-      &:after       { content:""; display:block; width:60px; height:3px; background: white; @include rotate(-45deg); float:left; margin-top:17px; margin-left:-10px}
+    &.visited       { position: relative;
+      &:after       { top:2px; right:-8px; position:absolute; content:""; display:block; width:60px; height:2px; background: #80D2E9; @include rotate(-45deg); float:left; margin-top:17px; margin-left:-10px}
+      &:before      { top:2px; right:-8px; position:absolute; content:""; display:block; width:60px; height:2px; background: #80D2E9; @include rotate(45deg); float:left; margin-top:17px; margin-left:-10px}
     }
     &.active.visited{ background:#80D2E9; 
       &:after       { content:""; display:none}
+      &:before      { content:""; display:none}
     }
   }
 }
