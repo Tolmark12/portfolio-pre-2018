@@ -5,8 +5,25 @@ a        {text-decoration: none; color:#3A90AF; }
 ul       {margin:0; padding:0;}
 li       {display:block}
 .pure-g  {margin-bottom:80px;}
-img      {height:auto; max-width: 100%; display: block;@include transition(opacity)}
+img      {height:auto; max-width: 100%; display: block;}
 
+.browser     { display: inline-block; background: white;position: relative; padding-top:26px;
+  &:before   { content:""; position:absolute; top:9px; left:10px; display:inline-block; width:61px; height:9px; background-position:-0px -0px; background: url(/assets/structure/sprite.png);  }
+  &:after    { content:""; position:absolute; top:5px; right:5px; display:inline-block; width:90%; height:17px; background-position:-0px -0px; background: #EBEBEA;  }
+  &.darker   { background: #F5F5F5;
+    &:after  { background: white;  }
+  }
+}
+
+.play-vid           { @include transition(background, 70ms); width:128px; height:128px; background:rgba(#6EC4D8, 0.9); position: absolute; border-radius: 50%; bottom:-30px; right:-30px; cursor: pointer; z-index:10;
+  &:after           { @include center; margin-left:59px; margin-top:50px; content:""; width: 0; height: 0; border-style: solid; border-width: 15px 0 15px 24px; border-color: transparent transparent transparent white;}
+  &:before          { @include transition(color, 70ms); content:"Play Video"; position: absolute; bottom: -20px; text-align: center; width:100%; font-family: $lato; font-style: italic; font-size: 16px; color:#319FBD; }
+  &:hover           { background: rgba(#1591B3, 0.8);
+    &:before        { color: #096882; }
+  }
+}
+
+video.clickable{cursor: pointer}
 
 .wrapper { margin:0 auto; }
 

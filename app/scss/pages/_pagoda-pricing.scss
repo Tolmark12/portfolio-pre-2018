@@ -1,4 +1,5 @@
 .pagoda-pricing                {
+  .meta-data                   {margin-bottom:100px}
   .vid                         {
     video                      { display: block; @include drop-shadow(); margin:0 auto;}
   }
@@ -6,4 +7,6 @@
     img                        { margin:0 auto; diaplay:block; }
   }
   .vector-pawns img            { margin-bottom:30px; padding:0 50px 90px; border-bottom:solid 1px #5AC8DB;}
+  .browser            { margin: 0 auto; width: 912px; display: block;}
+
 }

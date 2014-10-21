@@ -23,18 +23,7 @@ class ContentArea
     $node = $(node)
     @$el.append( $node )
     @$el.velocity {opacity:1}, duration:400
-
-    $("img[data-src='*']", $node).css( opacity:0, width:"50px"; height:"50px" )
-    $("img", $node).unveil 500, ()-> 
-      $(this).load ()->
-        this.style.opacity = 1;
-    $("html, body").scrollTop 0
-
-    # Wait for element to actually be added to the dom..
-    setTimeout ()=>
-      $(window).trigger("scroll.unveil")
-    , 
-      60
+    @replaceVideoTags($node)
 
   nextProject : () -> 
     newProjectIndex = DataVo.getIndexOfProject(@currentPage) + 1
@@ -45,4 +34,35 @@ class ContentArea
     newProjectIndex = DataVo.getIndexOfProject(@currentPage) - 1
     if newProjectIndex > -1
       PubSub.publish( 'CHANGE_PAGE', { pageId:DataVo.portfolio[newProjectIndex].id } )
+  
+  
+  replaceVideoTags : ($node) ->
+    $(".play-vid").on 'click', (e)=>
+      fadeout = 400
+      fadeIn  = 400
+      parent  = $(e.target).parent()
+      node    = $( templates[ "video" ]({vidName:'compiled'}) )
+      parent.css height: parent.height()
+
+      $(e.target).animate {opacity:0}, duration:fadeout*1.3, complete:()=>
+        parent.find('img').remove()
+        $(e.target).remove()
+        node.css opacity:0
+        node.animate {opacity:1}, {duration:fadeIn}
+        parent.append node
+        @addVidControls node
+      parent.find('img').animate {opacity:0}, {duration:fadeout}
+
+
+  addVidControls : (vid) ->
+    vid.on 'click', ()=>
+      if vid[0].paused
+        vid[0].play()
+      else
+        vid[0].pause()
+
+    
+  
+
+      
   
