@@ -37,12 +37,14 @@ class OverlayNav
     if @isHidden
       @$node.stop true
       @$node.css display:"block"
+      @$node.removeClass 'hidden'
       @$node.velocity {opacity:1}, {duration:500}
       @isHidden = false
   
   hide : () -> 
     if !@isHidden
       @$node.stop true
+      @$node.addClass 'hidden'
       @$node.velocity {opacity:0}, {duration:300 }
       @isHidden = true
 

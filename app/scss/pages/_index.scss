@@ -1,5 +1,5 @@
 $thmb-width:215px;
-.portfolio-index             { 
+.portfolio-index             { padding-bottom: 80px;
   .row                       { margin:50px 0 0 0; @include flexbox; }
   .project                   { cursor: pointer; 
     &.empty                  { opacity:0; pointer-events:none}

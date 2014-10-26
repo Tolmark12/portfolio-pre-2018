@@ -1,3 +1,9 @@
-.odds-and-ends {padding-top: 120px;
-  .line        {border-bottom:solid 2px $light-gray;  margin:120px 0}
+.odds-and-ends   { padding-top: 120px;
+  .line          { border-bottom:solid 2px $light-gray;  margin:120px 0}
+  .relative      { position: relative; }
+  .side-descript { width:240px; position: absolute; bottom:0; 
+    &.life        { bottom:100px; }
+  }
+  h1             { font-family:$lato; font-size:13px; color:#565757; border-bottom:solid 2px $light-gray; padding-bottom:13px;  }
+  p              { font-family:$meta; font-size:14px; font-style: italic; color:#939394; margin-bottom:0; }
 }

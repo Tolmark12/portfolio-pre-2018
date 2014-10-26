@@ -1,6 +1,7 @@
 class ContentArea
 
   constructor: (@$el) ->
+    @$html = $("html, body")
     @$el.css opacity:0
     PubSub.subscribe 'CHANGE_CONTENT', (msg, data)=> @changePage data.pageId
     PubSub.subscribe 'NEXT_PROJECT',   (msg, data)=> @nextProject()
@@ -17,6 +18,7 @@ class ContentArea
     @$el.velocity {opacity:0}, duration:200, complete:()=> @loadPage newPage
 
   loadPage : (page) ->
+    @scrollToTop()
     @currentPage = page
     @$el.empty()
     node = templates[ "pages/"+page ]()
@@ -25,6 +27,9 @@ class ContentArea
     @$el.velocity {opacity:1}, duration:400
     @replaceVideoTags($node)
 
+  scrollToTop : () ->
+    window.scrollTo(0,0)
+  
   nextProject : () -> 
     newProjectIndex = DataVo.getIndexOfProject(@currentPage) + 1
     if newProjectIndex < DataVo.portfolio.length
@@ -44,14 +49,14 @@ class ContentArea
       node    = $( templates[ "video" ]({vidName:'compiled'}) )
       parent.css height: parent.height()
 
-      $(e.target).animate {opacity:0}, duration:fadeout*1.3, complete:()=>
+      $(e.target).velocity {opacity:0}, duration:fadeout*1.3, complete:()=>
         parent.find('img').remove()
         $(e.target).remove()
         node.css opacity:0
-        node.animate {opacity:1}, {duration:fadeIn}
+        node.velocity {opacity:1}, {duration:fadeIn}
         parent.append node
         @addVidControls node
-      parent.find('img').animate {opacity:0}, {duration:fadeout}
+      parent.find('img').velocity {opacity:0}, {duration:fadeout}
 
 
   addVidControls : (vid) ->

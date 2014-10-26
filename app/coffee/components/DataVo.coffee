@@ -43,9 +43,12 @@ class DataVo
     count               = 0
     ar                  = []
     totalColumns        = 4
-    for project in @portfolio 
+    lastIndex           = @portfolio.length - 1
+    for project, i in @portfolio 
       ar.push project
-      if ++count == totalColumns
+
+      # Add a new row is the columns in this one are full unldess this is the last item
+      if ++count == totalColumns && i != lastIndex
         DataVo.projectsGrid.push ar
         count = 0
         ar = []
