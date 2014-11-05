@@ -17,7 +17,7 @@ img      {height:auto; max-width: 100%; display: block;}
 
 .play-vid           { @include transition(background, 70ms); width:128px; height:128px; background:rgba(#6EC4D8, 0.9); position: absolute; border-radius: 50%; bottom:-30px; right:-30px; cursor: pointer; z-index:10;
   &:after           { @include center; margin-left:59px; margin-top:50px; content:""; width: 0; height: 0; border-style: solid; border-width: 15px 0 15px 24px; border-color: transparent transparent transparent white;}
-  &:before          { @include transition(color, 70ms); content:"Play Video"; position: absolute; bottom: -20px; text-align: center; width:100%; font-family: $lato; font-style: italic; font-size: 16px; color:#319FBD; }
+  &:before          { @include transition(color, 70ms); content:"See Demo"; position: absolute; bottom: -20px; text-align: center; width:100%; font-family: $lato; font-style: italic; font-size: 16px; color:#319FBD; }
   &:hover           { background: rgba(#1591B3, 0.8);
     &:before        { color: #096882; }
   }

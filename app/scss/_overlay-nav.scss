@@ -25,8 +25,8 @@ $border-wid:4px;
   }
 }
 
-.map                   { padding:40px 48px 0px; background: rgba(#002028, 0.11); position:fixed; width: $mapWidth; margin:-60px auto 0; right:0; left:0; top: 36%; border-radius:6px;
-  .row                 { @include flexbox; margin:0 0 50px 0; }
+.map                   { padding:33px 48px 0px; background: rgba(#002028, 0.11); position:fixed; width: $mapWidth; margin:-60px auto 0; right:0; left:0; top: 36%; border-radius:6px;
+  .row                 { @include flexbox; margin:0 0 30px 0; }
   .project             { width:$projectItemHeight; height:$projectItemHeight; border-radius: 50%; background: white; display: inline-block; position: relative;
     &.empty            { opacity:0; pointer-events:none; }
     &.active           { @include transition(all, 0.15s); background: #EF5F7C; opacity:1; box-shadow:0 0 0 $border-wid white;

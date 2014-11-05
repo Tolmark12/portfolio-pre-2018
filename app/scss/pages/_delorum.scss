@@ -1,0 +1,11 @@
+.delorum{
+  .browser            { margin: 110px auto 0; width: 965px; display: block;
+    &.first           { margin-top:70px; }
+  }
+  .play-vid           { background: rgba(#333,0.9);
+    &:before          { color:#666; }
+    &:hover           { background: rgba(#FFF, 0.8);
+      &:before        { color: #333; }
+    }
+  }
+}

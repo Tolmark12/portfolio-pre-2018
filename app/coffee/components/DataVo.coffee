@@ -20,6 +20,7 @@ class DataVo
     pagoda_pricing : id:"pagoda_pricing",    title: "Pagoda Box", subtitle:"Pricing App"  
     form_studies   : id:"form_studies",      title: "Form Studies"
     odds_and_ends  : id:"odds_and_ends",     title: "Odds & Ends"
+    delorum        : id:"delorum",           title: "Delorum Design"
 
 
 
@@ -34,7 +35,9 @@ class DataVo
     @pages.pagoda_site    
     @pages.pagoda_pricing
     @pages.pagoda_dash
+    @pages.ibex
     @pages.form_studies
+    @pages.delorum
     @pages.odds_and_ends
   ]
 
@@ -42,7 +45,7 @@ class DataVo
     DataVo.projectsGrid = []
     count               = 0
     ar                  = []
-    totalColumns        = 4
+    totalColumns        = 5
     lastIndex           = @portfolio.length - 1
     for project, i in @portfolio 
       ar.push project
