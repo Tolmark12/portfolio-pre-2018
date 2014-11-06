@@ -46,7 +46,7 @@ class ContentArea
       fadeout = 400
       fadeIn  = 400
       parent  = $(e.target).parent()
-      node    = $( templates[ "video" ]({vidName:'compiled'}) )
+      node    = $( templates[ "video" ]({ vidName:$(e.target).attr "data-src" }) )
       parent.css height: parent.height()
 
       $(e.target).velocity {opacity:0}, duration:fadeout*1.3, complete:()=>
