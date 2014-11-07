@@ -32,9 +32,9 @@ class DataVo
     @pages.design_process   
     @pages.resistance
     @pages.playmill
+    @pages.pagoda_dash
     @pages.pagoda_site    
     @pages.pagoda_pricing
-    @pages.pagoda_dash
     @pages.ibex
     @pages.form_studies
     @pages.delorum
