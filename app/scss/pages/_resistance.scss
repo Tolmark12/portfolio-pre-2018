@@ -11,7 +11,7 @@
     .browser                  { margin-left:6px; @include drop-shadow(0px, 1px, 6px, #444);}
   }
   .three                      { margin-top:60px ;
-    .leaflet img              { margin-left:8px}
+    .leaflet img              { margin:0 auto;}
     .lies img                 { }
     .enemy img                { float:right;}
   }
