@@ -1,6 +1,14 @@
 class OverlayNav
 
   constructor: () ->
+    ignoredDevices = ['iPad', 'iPhone', 'iPod']
+    for device in ignoredDevices
+      return if navigator.platform == device 
+    
+    @init()
+      
+
+  init : () ->
     node       = templates['overlay-nav']()
     @$node     = $(node)
     @$window   = $ window

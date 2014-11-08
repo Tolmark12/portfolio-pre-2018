@@ -1,8 +1,8 @@
 .design_poster  {
   .top          {position: relative;}
-  a             { position: absolute; cursor:pointer; top:8px; right:10px;
+  a             { position: absolute; cursor:pointer; bottom:-74px; right:8px;
     svg         { 
-      .bg       { fill:#ED4655; opacity:0; @include transition; }
+      .bg       { fill:#E94654; opacity:0.85; @include transition; }
       .st0      { fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
       .st1      { fill:#80D2E9;}
       .st2      { fill:#ED4655;}
@@ -15,7 +15,7 @@
     }
     &:hover     {
       svg       {
-        .bg     { opacity:0.7; }
+        .bg     { opacity:0.95; }
         .blue   { fill:black; }
       }
     }
