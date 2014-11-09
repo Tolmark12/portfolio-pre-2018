@@ -46,11 +46,13 @@ class ContentArea
   
   replaceVideoTags : ($node) ->
     $(".play-vid").on 'click', (e)=>
+      vidName = $(e.target).attr "data-src"
       fadeout = 400
       fadeIn  = 400
       parent  = $(e.target).parent()
-      node    = $( templates[ "video" ]({ vidName:$(e.target).attr "data-src" }) )
+      node    = $( templates[ "video" ]({ vidName:vidName }) )
       parent.css height: parent.height()
+      @fireGoogleAnalyticsVideoWatch vidName
 
       $(e.target).velocity {opacity:0}, duration:fadeout*1.3, complete:()=>
         parent.find('img').remove()
@@ -71,11 +73,12 @@ class ContentArea
 
     
   fireGoogleAnalyticsEvent : (pageId) ->
-    console.log DataVo.pages[pageId].id
-    console.log DataVo.pages[pageId].title
     ga 'send', 'pageview', 
       'page'  : "/#{DataVo.pages[pageId].id}"
       'title' : DataVo.pages[pageId].title
+
+  fireGoogleAnalyticsVideoWatch : (vidName) ->
+    ga 'send', 'event', 'video', 'watch', vidName, 1
   
 
       
