@@ -7,6 +7,13 @@
     img                        { margin:0 auto; diaplay:block; }
   }
   .vector-pawns img            { margin-bottom:30px; padding:0 50px 90px; border-bottom:solid 1px #5AC8DB;}
-  .browser            { margin: 0 auto; width: 912px; display: block;}
+  .browser                     { margin: 0 auto; width: 912px; display: block;}
+  .play-vid                    { background: rgba(#FFF, 0.8);
+    &:before                   { color:#FFF; }
+    &:after                    { border-left-color:#EF5F7C; @include transition(border-left-color) }
+    &:hover                    { background: #FFF;
+      &:after                  { border-left-color:#DB3153; }
 
+    }
+  }
 }

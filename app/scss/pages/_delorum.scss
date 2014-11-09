@@ -1,6 +1,8 @@
 .delorum{
   .browser            { margin: 110px auto 0; width: 965px; display: block;
-    &.first           { margin-top:70px; }
+    &.first           { margin-top:70px; 
+      .wrap           { background:#2D2C2D; }
+    }
   }
   .play-vid           { background: rgba(#333,0.9);
     &:before          { color:#666; }

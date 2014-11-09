@@ -1,7 +1,8 @@
 class ContentArea
 
   constructor: (@$el) ->
-    @$html = $("html, body")
+    @$html = $ "html, body"
+    @$body = $ "body"
     @$el.css opacity:0
     PubSub.subscribe 'CHANGE_CONTENT', (msg, data)=> @changePage data.pageId
     PubSub.subscribe 'NEXT_PROJECT',   (msg, data)=> @nextProject()
@@ -25,6 +26,7 @@ class ContentArea
     $node = $(node)
     @$el.append( $node )
     @$el.velocity {opacity:1}, duration:400
+    @$body.attr "class", page
     @replaceVideoTags($node)
 
   scrollToTop : () ->
