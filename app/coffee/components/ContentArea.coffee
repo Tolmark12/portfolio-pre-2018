@@ -19,6 +19,7 @@ class ContentArea
     @$el.velocity {opacity:0}, duration:200, complete:()=> @loadPage newPage
 
   loadPage : (page) ->
+    @fireGoogleAnalyticsEvent page
     @scrollToTop()
     @currentPage = page
     @$el.empty()
@@ -69,6 +70,12 @@ class ContentArea
         vid[0].pause()
 
     
+  fireGoogleAnalyticsEvent : (pageId) ->
+    console.log DataVo.pages[pageId].id
+    console.log DataVo.pages[pageId].title
+    ga 'send', 'pageview', 
+      'page'  : "/#{DataVo.pages[pageId].id}"
+      'title' : DataVo.pages[pageId].title
   
 
       
