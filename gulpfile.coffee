@@ -27,7 +27,7 @@ wrap         = require 'gulp-wrap'
 
 # Paths to source files
 
-jadeStagePath     = 'stage/stage.jade'
+jadeStagePath     = 'stage/index.jade'
 jadePath          = 'app/jade/**/*.jade'
 cssPath           = 'app/scss/**/*.scss'
 cssStagePath      = 'stage/stage.scss'
@@ -113,7 +113,7 @@ bumpBowerVersion = ->
     .pipe(gulp.dest('./'));
 
 minifyAndJoin = () ->
-  gulp.src './server/stage.html'
+  gulp.src './server/index.html'
     .pipe usemin
       css : [ minifyCss(), 'concat'],
       html: [ minifyHtml({empty: true})],
@@ -137,9 +137,9 @@ server = ->
 
 # Open in the browser
 launch = ->
-  gulp.src("./stage/stage.jade") # An actual file must be specified or gulp will overlook the task.
+  gulp.src("./stage/index.jade") # An actual file must be specified or gulp will overlook the task.
     .pipe(open("", 
-      url: "http://0.0.0.0:3000/stage.html",
+      url: "http://0.0.0.0:3000/index.html",
       app: "google chrome"
     ))
 
