@@ -2,9 +2,6 @@ class Window
 
   constructor: () ->
     @defaultPage = 'index'
-    # Subscribe to change page click events from
-    PubSub.subscribe 'CHANGE_PAGE', (msg, data)=> @changePage data
-    History.Adapter.bind window,'statechange', @onWindowStateChange
     @loadInitialPage()
 
 
@@ -21,7 +18,14 @@ class Window
   loadInitialPage : () ->
     pageId = document.URL.split("?")[1]?.split("=")[1]
     obj = if !pageId? then DataVo.pages[@defaultPage] else DataVo.pages[pageId]
+    
+    
     History.replaceState {page:obj.id}, obj.title, "?page=#{obj.id}"
-    if true
-      @onWindowStateChange()
+    @onWindowStateChange()
+
+    PubSub.subscribe 'CHANGE_PAGE', (msg, data)=> @changePage data
+    History.Adapter.bind window,'statechange', @onWindowStateChange
+
+
+    # if true
   

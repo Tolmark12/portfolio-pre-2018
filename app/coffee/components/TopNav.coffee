@@ -22,7 +22,7 @@ class TopNav
       $('.title', @$node).text title
       $('.title-block', @$node).velocity {opacity:1}, {duration:200}
 
-      if subtitle?
+      if subtitle? 
         $('.subtitle', @$node).text subtitle
         $('.subtitle', @$node).css display:"inline-block"
       else

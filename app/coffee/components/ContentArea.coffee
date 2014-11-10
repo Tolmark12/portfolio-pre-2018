@@ -9,7 +9,7 @@ class ContentArea
     PubSub.subscribe 'PREV_PROJECT',   (msg, data)=> @prevProject()
   
   changePage : (page) ->
-    if page == @currentPage then return
+    if page == @currentPage || !page? then return
     if @currentPage?
       @unloadCurrentPage page
     else
