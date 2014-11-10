@@ -45,6 +45,9 @@ class ContentArea
   
   
   replaceVideoTags : ($node) ->
+    @isFobiddenSafari()
+
+    # return if 
     $(".play-vid").on 'click', (e)=>
       vidName = $(e.target).attr "data-src"
       fadeout = 400
@@ -65,6 +68,9 @@ class ContentArea
 
 
   addVidControls : (vid) ->
+
+      
+    vid[0].play()
     vid.on 'click', ()=>
       if vid[0].paused
         vid[0].play()
@@ -81,5 +87,10 @@ class ContentArea
     ga 'send', 'event', 'video', 'watch', vidName, 1
   
 
+  isFobiddenSafari : () -> 
+    if ( navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 )
+      $(".hide-for-safari").css display:'none'
+    
+  
       
   
