@@ -1,13 +1,13 @@
 .design_poster  {
   .top          {position: relative;}
   a             { position: absolute; cursor:pointer; bottom:-74px; right:8px;
-    svg         { 
+    svg         {
       .bg       { fill:#E94654; opacity:0.85; @include transition; }
       .st0      { fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
       .st1      { fill:#80D2E9;}
       .st2      { fill:#ED4655;}
       .st3      { fill:#FFFFFF;}
-      .st4      { font-family:'Lato-Bold';}
+      .st4      { font-family:$lato;}
       .st5      { letter-spacing:1px;}
       .st6      { font-size:14px;}
       .st7      { fill:none;stroke:#EDEEF1;stroke-width:3;stroke-miterlimit:10;}
