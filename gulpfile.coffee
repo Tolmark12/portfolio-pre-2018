@@ -33,7 +33,7 @@ cssPath           = 'app/scss/**/*.scss'
 cssStagePath      = 'stage/stage.scss'
 coffeePath        = 'app/coffee/**/*.coffee'
 coffeeStagePath   = 'stage/**/*.coffee'
-assetPath         = ['app/images/**/*', 'app/video/**/*']
+assetPath         = ['app/images/**/*', 'app/video/**/*', 'app/pdf/**/*']
 
 
 htmlStage = (cb)->
