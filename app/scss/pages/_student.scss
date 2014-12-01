@@ -1,0 +1,14 @@
+.student             {
+  .client.teacher    {
+    p                { width:350px; margin:10px 0 0; }
+    li span          { color:#666; }
+    &:before         { color: #D4D4D3; }
+  }
+  img               { display: block; margin:30px auto 10px;}
+  &.hc_design        {
+    .overview:before { content:"Human Centered Design - 7 x 7 x 7 Cube"}
+  }
+  &.hc_design_drawing        {
+    .overview:before { content:"Design Drawing"}
+  }
+}
