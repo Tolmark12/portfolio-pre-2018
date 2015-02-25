@@ -3,3 +3,4 @@ web1:
   document_root: rel
   httpd_document_root: rel
   httpd_index_list: index.html
+  
