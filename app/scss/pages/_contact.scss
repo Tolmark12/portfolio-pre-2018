@@ -1,21 +1,21 @@
 body.contact        { background:#333333;
-  .contact-wrapper  { height:100vh; 
-    .contact-box    { background:#424242; width:400px; padding:40px 40px 30px ; @include center(); @include vertical-align(); margin-top:-50px; 
+  .contact-wrapper  { height:100vh;
+    .contact-box    { background:#424242; width:400px; padding:40px 40px 30px ; @include center(); @include vertical-align(); margin-top:-50px;
                       font-size:16px; font-family:$lato; font-weight: bold; text-align: center;
-      .email        { display: inline-block; color:#EB818A; text-transform: uppercase; letter-spacing: 0.11em; 
+      .email        { display: inline-block; color:#EB818A; text-transform: uppercase; letter-spacing: 0.11em;
         &:hover     { color:white; }
         &:after     { content:"/"; color:#333333; display: inline-block; margin:0 10px; }
       }
       .phone        { display: inline-block; color:white; letter-spacing: 0.13em; }
     }
   }
-  .top-nav                    { border-bottom-color: #3B3B3B; 
-    .logo                     { 
+  .top-nav                    { border-bottom-color: #3B3B3B;
+    .logo                     {
       circle                  { fill:#212121; }
       polygon                 { fill:#616161; }
       &:hover *               { fill:#DDD; }
     }
-    .nav                      { 
+    .nav                      {
       a                       { color:#616161;
         &:hover               { color:#222222; }
         &:after               { color:#8D999E; }
@@ -23,5 +23,3 @@ body.contact        { background:#333333;
     }
   }
 }
-
-
