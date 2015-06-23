@@ -7,14 +7,14 @@ class ContentArea
     PubSub.subscribe 'CHANGE_CONTENT', (msg, data)=> @changePage data.pageId
     PubSub.subscribe 'NEXT_PROJECT',   (msg, data)=> @nextProject()
     PubSub.subscribe 'PREV_PROJECT',   (msg, data)=> @prevProject()
-  
+
   changePage : (page) ->
     if page == @currentPage || !page? then return
     if @currentPage?
       @unloadCurrentPage page
     else
       @loadPage page
-  
+
   unloadCurrentPage : (newPage) ->
     @$el.velocity {opacity:0}, duration:200, complete:()=> @loadPage newPage
 
@@ -23,8 +23,7 @@ class ContentArea
     @scrollToTop()
     @currentPage = page
     @$el.empty()
-    node = templates[ "pages/"+page ]()
-    $node = $(node)
+    $node = $( templates[ "pages/"+page ]() )
     @$el.append( $node )
     @$el.velocity {opacity:1}, duration:400
     @$body.attr "class", page
@@ -32,22 +31,21 @@ class ContentArea
 
   scrollToTop : () ->
     window.scrollTo(0,0)
-  
-  nextProject : () -> 
+
+  nextProject : () ->
     newProjectIndex = DataVo.getIndexOfProject(@currentPage) + 1
     if newProjectIndex < DataVo.portfolio.length
       PubSub.publish( 'CHANGE_PAGE', { pageId:DataVo.portfolio[newProjectIndex].id } )
 
-  prevProject : () -> 
+  prevProject : () ->
     newProjectIndex = DataVo.getIndexOfProject(@currentPage) - 1
     if newProjectIndex > -1
       PubSub.publish( 'CHANGE_PAGE', { pageId:DataVo.portfolio[newProjectIndex].id } )
-  
-  
+
+
   replaceVideoTags : ($node) ->
     @isFobiddenSafari()
 
-    # return if 
     $(".play-vid").on 'click', (e)=>
       vidName = $(e.target).attr "data-src"
       fadeout = 400
@@ -68,8 +66,6 @@ class ContentArea
 
 
   addVidControls : (vid) ->
-
-      
     vid[0].play()
     vid.on 'click', ()=>
       if vid[0].paused
@@ -77,20 +73,16 @@ class ContentArea
       else
         vid[0].pause()
 
-    
+
   fireGoogleAnalyticsEvent : (pageId) ->
-    ga 'send', 'pageview', 
+    ga 'send', 'pageview',
       'page'  : "/#{DataVo.pages[pageId].id}"
       'title' : DataVo.pages[pageId].title
 
   fireGoogleAnalyticsVideoWatch : (vidName) ->
     ga 'send', 'event', 'video', 'watch', vidName, 1
-  
 
-  isFobiddenSafari : () -> 
+
+  isFobiddenSafari : () ->
     if ( navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 )
       $(".hide-for-safari").css display:'none'
-    
-  
-      
-  
