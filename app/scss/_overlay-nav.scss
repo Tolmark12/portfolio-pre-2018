@@ -9,9 +9,15 @@ $border-wid:4px;
     .right, .left,     { cursor:auto; }
   }
   .overlay-nav         { position: fixed; top: 50%; width:100%; height: 0;
-    .right, .left      { width:$buttonHeight; height: $buttonHeight; margin-top:$buttonHeight/-2; border-radius: 50%; background: rgba(white, 0.9); cursor:pointer; 
-      svg              { pointer-events:none; }
-      &:hover svg polyline{ stroke:#333; }
+    .right, .left      { width:$buttonHeight; height: $buttonHeight; margin-top:$buttonHeight/-2; border-radius: 50%; background: rgba(white, 0.3); cursor:pointer;
+      svg              { pointer-events:none;
+        polyline       { stroke:#FFF; }
+      }
+      &:hover          { background: rgba(white, 0.7);
+        svg            {
+          polyline     { stroke:#EF5F7C; }
+        }
+      }
       // &:after        { content:"Prev Project"; display:block; font-style: italic; font-size:14px; width:45px; text-align: center; line-height: 16px; color:#1177AB; margin:21px auto;}
     }
     .left              { float:left;  margin-left:20px;
@@ -36,7 +42,7 @@ $border-wid:4px;
       &:after          { top:2px; right:-8px; position:absolute; content:""; display:block; width:60px; height:3px; background: white; @include rotate(-45deg); float:left; margin-top:17px; margin-left:-10px}
       &:before         { top:2px; right:-8px; position:absolute; content:""; display:block; width:60px; height:3px; background: white; @include rotate(45deg); float:left; margin-top:17px; margin-left:-10px}
     }
-    &.active.visited   { background:#EF5F7C; 
+    &.active.visited   { background:#EF5F7C;
       &:after          { content:""; display:none}
       &:before         { content:""; display:none}
     }

@@ -1,12 +1,12 @@
 $thmb-width:215px;
 .portfolio-index             { padding-bottom: 80px;
   .row                       { margin:50px 0 0 0; @include flexbox; }
-  .project                   { cursor: pointer; 
+  .project                   { cursor: pointer;
     &.empty                  { opacity:0; pointer-events:none}
     &:after                  { content:""; display:block; width:$thmb-width; height:$thmb-width; background: url(/assets/portfolio-thmbs.jpg); border-radius: 50%; box-shadow: 0px 0px 0px 0pt white; @include transition(box-shadow, 0.3s, cubic-bezier(0.630, 0.000, 0.000, 1));}
     &:hover:after            { box-shadow: 0px 0px 0px 10pt white; @include transition(box-shadow, 0.1s)}
-     
-    // Icons 
+
+    // Icons
     &.playmill:after         { background-position:-$thmb-width*1 -0px;}
     &.resistance:after       { background-position:0 -0px;}
     &.mfa:after              { background-position:-$thmb-width*2  -0px;}
@@ -21,5 +21,7 @@ $thmb-width:215px;
     &.odds_and_ends:after    { background-position:-$thmb-width*11 -0px;}
     &.ibex:after             { background-position:-$thmb-width*12 -0px;}
     &.delorum:after          { background-position:-$thmb-width*13 -0px;}
+    &.nanobox:after          { background-position:-$thmb-width*14 -0px;}
+    &.boneyard:after         { background-position:-$thmb-width*15 -0px;}
   }
 }
