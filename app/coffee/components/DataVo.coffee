@@ -29,7 +29,7 @@ class DataVo
 
 
   @portfolio : [
-    @pages.nanobox
+    # @pages.nanobox
     @pages.pagoda_site
     @pages.pagoda_dash
     @pages.mfa
@@ -42,7 +42,7 @@ class DataVo
     # @pages.pagoda_pricing
     @pages.ibex
     @pages.form_studies
-    # @pages.delorum
+    @pages.delorum
     @pages.odds_and_ends
     # @pages.boneyard
   ]

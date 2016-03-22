@@ -1,6 +1,6 @@
 {
   "name": "package",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "dependencies": {
     "jquery": "~2.1.1",
     "pure": "~0.5.0",
