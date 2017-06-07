@@ -11,6 +11,7 @@
   .client                 { margin-right:0;
     &.advisor:before      { content:"thesis advisor"; }
   }
+  .hide-title:before     {display: none}
 }
 
 .descript                 { margin:20px 0 20px 0; letter-spacing:0; font-style:italic; width:100%; padding:0 0 5px 0;  border-bottom:solid 2px $light-gray;

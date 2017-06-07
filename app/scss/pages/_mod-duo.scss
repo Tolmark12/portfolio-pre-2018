@@ -1,0 +1,7 @@
+.mod-duo       {
+  .images      {display: flex; flex-direction: column; align-items: center; background: #161F2A;
+    img        {
+      &.detail {margin: 100px 0; }
+    }
+  }
+}

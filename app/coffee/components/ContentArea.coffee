@@ -45,24 +45,32 @@ class ContentArea
 
   replaceVideoTags : ($node) ->
     @isFobiddenSafari()
+    # @startVideo($node)
+    setTimeout ()=>
+      @startVideo()
+    ,
+      900
 
-    $(".play-vid").on 'click', (e)=>
-      vidName = $(e.target).attr "data-src"
-      fadeout = 400
-      fadeIn  = 400
-      parent  = $(e.target).parent()
-      node    = $( templates[ "video" ]({ vidName:vidName }) )
-      parent.css height: parent.height()
-      @fireGoogleAnalyticsVideoWatch vidName
 
-      $(e.target).velocity {opacity:0}, duration:fadeout*1.3, complete:()=>
-        parent.find('img').remove()
-        $(e.target).remove()
-        node.css opacity:0
-        node.velocity {opacity:1}, {duration:fadeIn}
-        parent.append node
-        @addVidControls node
-      parent.find('img').velocity {opacity:0}, {duration:fadeout}
+  startVideo : ($node) ->
+    $vidTrigger = $(".play-vid")
+    # $(".play-vid").on 'click', (e)=>
+    vidName = $vidTrigger.attr "data-src"
+    fadeout = 400
+    fadeIn  = 400
+    parent  = $vidTrigger.parent()
+    node    = $( templates[ "video" ]({ vidName:vidName }) )
+    parent.css height: parent.height()
+    @fireGoogleAnalyticsVideoWatch vidName
+
+    $vidTrigger.velocity {opacity:0}, duration:fadeout*1.3, complete:()=>
+      parent.find('img').remove()
+      $vidTrigger.remove()
+      node.css opacity:0
+      node.velocity {opacity:1}, {duration:fadeIn}
+      parent.append node
+      # @addVidControls node
+    parent.find('img').velocity {opacity:0}, {duration:fadeout}
 
 
   addVidControls : (vid) ->
