@@ -12,9 +12,10 @@ class DataVo
     ibex           : id:"ibex",              title: "Ibex"
     index          : id:"index",             title: ""
     justin_bw_v1   : id:"justin_bw_v1",      title: "Justin Cash", subtitle:"Inital Release"
-    justin_bw_v2   : id:"justin_bw_v2",      title: "Justin Cash", subtitle:"CD Reissue"
-    logos          : id:"logos",             title: "Logos & Brands"
+    justin_bw_v2   : id:"justin_bw_v2",      title: "Justin Cash"
+    logos          : id:"logos",             title: "Logos & Icons"
     mfa            : id:"mfa",               title: "MFA Thesis"
+    mod_duo        : id:"mod_duo",           title: "Mod Duo"
     nanobox        : id:"nanobox",           title: "Nanobox"
     odds_and_ends  : id:"odds_and_ends",     title: "Odds & Ends"
     pagoda_dash    : id:"pagoda_dash",       title: "Pagoda Box", subtitle:"Dashboard"
@@ -29,16 +30,17 @@ class DataVo
 
 
   @portfolio : [
-    # @pages.nanobox
+    @pages.nanobox
     @pages.pagoda_site
     @pages.pagoda_dash
+    @pages.logos
     @pages.mfa
+    @pages.mod_duo
     # @pages.justin_bw_v1
     @pages.justin_bw_v2
     @pages.design_process
     @pages.playmill
     @pages.resistance
-    @pages.logos
     # @pages.pagoda_pricing
     @pages.ibex
     @pages.form_studies

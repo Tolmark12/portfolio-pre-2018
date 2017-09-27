@@ -1,4 +1,4 @@
-.logos                    {
+.logos                    {padding-top:60px;
   .logo                   {
     img                   { /*@include drop-shadow(0px, 1px, 8px, #AAA);*/ line-height: 0; }
   }
@@ -7,7 +7,7 @@
     .descript             { width:380px; }
   }
   .long-sketch            { margin-top:10px;}
-  .yhc                    { margin-top:60px;
+  .yhc                    {
     .stationary img       { float: right }
   }
   .talking-stationary img { margin:21px 0 0 46px;}
@@ -17,4 +17,7 @@
   .right                  {
     img, .descript        { float:right; }
   }
+  img.trash               {margin:200px auto 80px; }
 }
+
+.project.logos{padding-top:0px}
