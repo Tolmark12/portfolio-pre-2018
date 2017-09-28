@@ -1,22 +1,47 @@
-.design_poster  {
-  .top          {position: relative;}
-  a             { position: absolute; cursor:pointer; bottom:-74px; right:8px;
-    svg         {
-      .bg       { fill:#E94654; opacity:0.85; @include transition; }
-      .st0      { fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
-      .st1      { fill:#80D2E9;}
-      .st2      { fill:#ED4655;}
-      .st3      { fill:#FFFFFF;}
-      .st4      { font-family:$lato;}
-      .st5      { letter-spacing:1px;}
-      .st6      { font-size:14px;}
-      .st7      { fill:none;stroke:#EDEEF1;stroke-width:3;stroke-miterlimit:10;}
-      .blue     { @include transition; }
+.design_poster     {
+  $red : #C10000;
+  .top             {position: relative;}
+  .phases          {display: flex; justify-content: space-between; flex-wrap: wrap; margin-top:180px;  }
+  .phase           {letter-spacing: initial; font-family: $meta; width:40%; color:#5E5E5E; margin-bottom: 80px; background: white; padding:40px;
+    > .title       {text-transform: uppercase; font-size:50px; font-weight: bold; font-family:$lato; color:$red; letter-spacing: 0.06em; }
+    .summary       {font-size:20px; font-style: italic; line-height: 1.3; color:#454545; margin:20px 0; min-height: 220px; }
+    .point         {margin-top:30px; max-width:400px;
+      .title       {font-weight: bold; font-family:$lato; color:#3C3C3C; border-bottom:solid 1px #B6B6B6; padding-bottom:7px; margin-bottom:7px; }
+      .details     {margin:0px 0 20px;
+        .detail    {position: relative;
+          &:before {content:"-"; position: absolute; left:-10px; }
+        }
+      }
+      .blurb       {font-style: italic;  }
     }
-    &:hover     {
-      svg       {
-        .bg     { opacity:0.95; }
-        .blue   { fill:black; }
+    .handoff       { margin-top:60px; max-width:400px; border-top:solid 1px #B6B6B6; padding-top:60px;
+      .to          {color: $red; font-weight: bold; font-family: $lato; text-transform: uppercase; letter-spacing: 0.06em; font-size:12px;
+        &:before   {color:black; content:"Hand-off to "}
+        &:after    {color:black; content:" :"}
+      }
+      .item        {margin:20px 0 20px; ;
+        .title     {color: $red; font-family:$lato; }
+        .content   {font-style:italic; }
+      }
+    }
+  }
+  a                {position: absolute; cursor:pointer; bottom:-74px; right:8px;
+    svg            {
+      .bg          {fill:#E94654; opacity:0.85; @include transition; }
+      .st0         {fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+      .st1         {fill:#80D2E9;}
+      .st2         {fill:#ED4655;}
+      .st3         {fill:#FFFFFF;}
+      .st4         {font-family:$lato;}
+      .st5         {letter-spacing:1px;}
+      .st6         {font-size:14px;}
+      .st7         {fill:none;stroke:#EDEEF1;stroke-width:3;stroke-miterlimit:10;}
+      .blue        {@include transition; }
+    }
+    &:hover        {
+      svg          {
+        .bg        {opacity:0.95; }
+        .blue      {fill:black; }
       }
     }
   }
