@@ -1,45 +1,47 @@
 class DataVo
 
-  @emptyPage       : id:"empty", title:""
+  @emptyPage          : id:"empty", title:""
   @pages :
-    "/"            : id:"index",             title: ""
-    boneyard       : id:"boneyard",          title: "Boneyard"
-    about          : id:"about",             title: ""
-    contact        : id:"contact",           title: ""
-    delorum        : id:"delorum",           title: "Delorum Design"
-    design_process : id:"design_process",    title: "Design Process"
-    form_studies   : id:"form_studies",      title: "Experiments in Form"
-    ibex           : id:"ibex",              title: "Ibex"
-    index          : id:"index",             title: ""
-    justin_bw_v1   : id:"justin_bw_v1",      title: "Justin Cash", subtitle:"Inital Release"
-    justin_bw_v2   : id:"justin_bw_v2",      title: "Justin Cash"
-    logos          : id:"logos",             title: "Logos & Icons"
-    mfa            : id:"mfa",               title: "MFA Thesis"
-    mod_duo        : id:"mod_duo",           title: "Mod Duo"
-    nanobox        : id:"nanobox",           title: "Nanobox"
-    odds_and_ends  : id:"odds_and_ends",     title: "Odds & Ends"
-    pagoda_dash    : id:"pagoda_dash",       title: "Pagoda Box", subtitle:"Dashboard"
-    pagoda_pricing : id:"pagoda_pricing",    title: "Pagoda Box", subtitle:"Pricing App"
-    pagoda_site    : id:"pagoda_site",       title: "Pagoda Box", subtitle:"Front Site"
-    playmill       : id:"playmill",          title: "Playmill"
-    resistance     : id:"resistance",        title: "Resistance Movement"
+    "/"               : id:"index",             title: ""
+    boneyard          : id:"boneyard",          title: "Boneyard"
+    about             : id:"about",             title: ""
+    contact           : id:"contact",           title: ""
+    delorum           : id:"delorum",           title: "Delorum Design"
+    design_process    : id:"design_process",    title: "Design Process"
+    form_studies      : id:"form_studies",      title: "Experiments in Form"
+    ibex              : id:"ibex",              title: "Ibex"
+    index             : id:"index",             title: ""
+    justin_bw_v1      : id:"justin_bw_v1",      title: "Justin Cash", subtitle:"Inital Release"
+    justin_bw_v2      : id:"justin_bw_v2",      title: "Justin Cash"
+    logos             : id:"logos",             title: "Logos & Icons"
+    mfa               : id:"mfa",               title: "MFA Thesis"
+    mod_duo           : id:"mod_duo",           title: "Mod Duo"
+    nanobox_explainer : id:"nanobox_explainer", title: "Nanobox", subtitle:"Explainer Video"
+    nanobox           : id:"nanobox",           title: "Nanobox"
+    odds_and_ends     : id:"odds_and_ends",     title: "Odds & Ends"
+    pagoda_dash       : id:"pagoda_dash",       title: "Pagoda Box", subtitle:"Dashboard"
+    pagoda_pricing    : id:"pagoda_pricing",    title: "Pagoda Box", subtitle:"Pricing App"
+    pagoda_site       : id:"pagoda_site",       title: "Pagoda Box", subtitle:"Front Site"
+    playmill          : id:"playmill",          title: "Playmill"
+    resistance        : id:"resistance",        title: "Resistance Movement"
     # Student
-    student_hc     : id:"student_hc",        title: "HC Design", subtitle:"7 x 7 x 7 Cube"
+    student_hc        : id:"student_hc",        title: "HC Design", subtitle:"7 x 7 x 7 Cube"
     student_design_drawing_1     : id:"student_design_drawing_1",        title: "Design Drawing"
 
 
 
   @portfolio : [
     @pages.nanobox
+    @pages.nanobox_explainer
     @pages.pagoda_site
     @pages.pagoda_dash
     @pages.logos
-    @pages.mfa
     @pages.mod_duo
+    @pages.mfa
     # @pages.justin_bw_v1
-    @pages.justin_bw_v2
-    @pages.design_process
     @pages.playmill
+    @pages.design_process
+    @pages.justin_bw_v2
     @pages.resistance
     # @pages.pagoda_pricing
     @pages.ibex
