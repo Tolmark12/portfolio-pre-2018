@@ -17,7 +17,7 @@ References
 
 - After she learned of his extra-marital liasons, why did Joseph promise Emma that he would take no more wives, then marry more behind her back? I struggle to reconcile the divine origin of polygamy with this dishonesty. [MT](http://www.mormonthink.com/joseph-smith-polygamy.htm#permission)
 
-- Would the Lord ever tell a girl she should marry Joseph or else Joseph and she would be cut down by an angel with a flaming sword? [JSP](http://josephsmithspolygamy.org/plural-wives-overview/fanny-alger/#link_ajs-fn-id_1-5628)
+- Would the Lord ever tell a girl she should marry Joseph or else Joseph and she would be cut down by an angel with a flaming sword? [BYU](http://www.ldshistory.us/pc/merlbyu.htm)
 
 - How is it ok to send a married man on a mission, then after he is gone, approach his wife and tell her that she needs to marry Joseph? [JSP](http://www.wivesofjosephsmith.org/11-MarindaJohnsonHyde.htm)
 
